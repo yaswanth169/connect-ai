@@ -1,0 +1,189 @@
+# ConnectAI - Bridge Your Data to AI
+
+A professional React application for connecting business data sources to AI applications. Built with React, TypeScript, Tailwind CSS, and modern best practices.
+
+## Features
+
+- 🎨 **Modern Dark Theme UI** - Professional, clean design with dark mode
+- 🔐 **SSO Authentication** - Single Sign-On login integration in sidebar
+- 📱 **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile
+- 🧩 **Reusable Components** - Clean component architecture with TypeScript
+- 🎯 **270+ Data Sources** - Pre-built connectors for business applications
+- ⚡ **Fast Performance** - Built with Vite for lightning-fast development
+- 🎨 **Tailwind CSS** - Utility-first CSS framework for rapid UI development
+- 🔍 **React Router** - Client-side routing with protected routes
+
+## Tech Stack
+
+- **React 19** - Latest React with modern features
+- **TypeScript** - Type-safe development
+- **Vite** - Next-generation frontend tooling
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Beautiful, consistent icon set
+- **React Router DOM** - Client-side routing
+
+## Project Structure
+
+```
+connect-ai/
+├── src/
+│   ├── components/
+│   │   ├── ui/              # Reusable UI components
+│   │   │   ├── Button.tsx
+│   │   │   ├── Card.tsx
+│   │   │   ├── Input.tsx
+│   │   │   ├── Badge.tsx
+│   │   │   └── index.ts
+│   │   └── layout/          # Layout components
+│   │       ├── Sidebar.tsx
+│   │       ├── Header.tsx
+│   │       ├── MainLayout.tsx
+│   │       └── index.ts
+│   ├── pages/               # Page components
+│   │   ├── Landing.tsx
+│   │   ├── Dashboard.tsx
+│   │   ├── Integrations.tsx
+│   │   ├── Sources.tsx
+│   │   ├── NotFound.tsx
+│   │   └── index.ts
+│   ├── App.tsx              # Main app component with routing
+│   ├── main.tsx             # Application entry point
+│   └── index.css            # Global styles with Tailwind
+├── public/                  # Static assets
+├── index.html               # HTML template
+├── tailwind.config.js       # Tailwind configuration
+├── tsconfig.json            # TypeScript configuration
+├── vite.config.ts           # Vite configuration
+└── package.json             # Dependencies and scripts
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm
+
+### Installation
+
+1. Navigate to the project directory:
+```bash
+cd connect-ai
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and visit:
+```
+http://localhost:3000
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Key Features
+
+### Landing Page
+- Hero section with gradient effects
+- Feature cards showcasing capabilities
+- Integration showcase grid
+- Statistics dashboard
+- Call-to-action sections
+
+### Dashboard
+- Real-time metrics and statistics
+- Query performance monitoring
+- Active connections overview
+- Recent activity timeline
+- Trend indicators
+
+### Integrations
+- 270+ pre-built connectors
+- Category-based filtering
+- Search functionality
+- Connection status badges
+- AI platform integrations (ChatGPT, Claude, MCP, etc.)
+
+### Sidebar Navigation
+- Organized navigation sections
+- Active route highlighting
+- SSO login/logout functionality
+- User profile display
+- Responsive mobile menu
+
+## Component Library
+
+### UI Components
+
+- **Button** - Variants: primary, secondary, ghost, danger
+- **Card** - With header, title, description, and content sections
+- **Input** - With label, error states, and icon support
+- **Badge** - Status indicators with multiple variants
+
+### Layout Components
+
+- **Sidebar** - Responsive sidebar with navigation and SSO login
+- **Header** - Top header with mobile menu toggle and actions
+- **MainLayout** - Main layout wrapper with sidebar and content area
+
+## Customization
+
+### Colors
+
+The color scheme is defined in `tailwind.config.js`:
+- Primary colors (blue shades)
+- Dark theme colors
+- Custom gradients
+
+### Adding New Pages
+
+1. Create page component in `src/pages/`
+2. Add route in `src/App.tsx`
+3. Add navigation link in `src/components/layout/Sidebar.tsx`
+
+### Styling
+
+All styles use Tailwind CSS utility classes. Custom styles can be added in:
+- `src/index.css` for global styles
+- Component files for component-specific styles
+
+## SSO Integration
+
+The SSO login button is located in the sidebar. To integrate with a real SSO provider:
+
+1. Update the `handleSSOLogin` function in `Sidebar.tsx`
+2. Add OAuth/SAML configuration
+3. Implement token management
+4. Add protected route logic
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+MIT License
+
+## Author
+
+Built with ❤️ for modern AI-powered applications
+
