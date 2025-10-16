@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiPlus, FiSearch, FiFilter, FiTrendingUp, FiCheckCircle, FiPackage } from 'react-icons/fi';
 import { GlassCard, Button, Badge, Input, Loader, SkeletonCard } from '../components/ui';
+import RequestIntegrationModal from '../components/RequestIntegrationModal';
 import sourcesData from '../data/sources.json';
 import { getIcon } from '../utils/iconMap';
 
@@ -10,6 +11,7 @@ export const Sources = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
   const [sources, setSources] = useState([]);
+  const [requestModalOpen, setRequestModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -53,7 +55,12 @@ export const Sources = () => {
                 Connect your business tools to AI-powered automation
               </p>
             </div>
-            <Button icon={FiPlus} size="lg" className="lg:w-auto">
+            <Button 
+              icon={FiPlus} 
+              size="lg" 
+              className="lg:w-auto"
+              onClick={() => setRequestModalOpen(true)}
+            >
               Request Integration
             </Button>
           </div>
@@ -215,6 +222,12 @@ export const Sources = () => {
           </div>
         )}
       </div>
+
+      {/* Request Integration Modal */}
+      <RequestIntegrationModal 
+        isOpen={requestModalOpen}
+        onClose={() => setRequestModalOpen(false)}
+      />
     </div>
   );
 };

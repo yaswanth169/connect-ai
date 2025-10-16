@@ -1,0 +1,26 @@
+{
+  "greetings": [
+    "Hello! I'm your ConnectAI assistant. How can I help you today?",
+    "Hi there! Need help with MCP integration?",
+    "Welcome! Ask me anything about ConnectAI."
+  ],
+  "responses": {
+    "mcp": "MCP (Model Context Protocol) is a standardized way to connect AI models with external tools and data sources. It allows seamless integration between LLMs and your business tools.",
+    "how to connect": "To connect via MCP: 1) Choose your tool from Sources, 2) Select an AI model from Integrations, 3) Follow the documentation, 4) Add your MCP endpoint URL. It's that simple!",
+    "pricing": "ConnectAI offers flexible pricing plans. Contact our sales team for enterprise pricing or start with our free tier to test integrations.",
+    "support": "Need help? You can reach our support team at support@connectai.com or use the feedback form in the sidebar.",
+    "integrations": "We support 270+ integrations including Jira, Slack, GitHub, Notion, and all major AI models like GPT-4, Claude, Gemini, and more!",
+    "tools": "Our platform includes tools for project management (Jira, Asana), communication (Slack), documentation (Confluence, Notion), and version control (GitHub).",
+    "ai models": "We support GPT-4, Claude 3, Llama 3, Gemini Pro, Mistral, Grok, and custom models. Connect any LLM to your business tools via MCP.",
+    "getting started": "Getting started is easy! 1) Browse available sources, 2) Select tools you need, 3) Choose an AI model, 4) Follow our setup guide, 5) Start automating!",
+    "documentation": "Check out our comprehensive documentation in the API section for detailed integration guides, code examples, and best practices.",
+    "security": "We take security seriously. All connections are encrypted, we support SSO, and follow SOC 2 compliance standards."
+  },
+  "fallback": [
+    "I'm here to help! Could you please rephrase your question?",
+    "I'm not sure I understand. Try asking about MCP, integrations, or getting started!",
+    "Hmm, I don't have an answer for that yet. Would you like to speak with our support team?",
+    "That's a great question! For detailed answers, check our documentation or contact support."
+  ]
+}
+

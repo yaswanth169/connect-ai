@@ -19,9 +19,11 @@ export const Integrations = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedProvider, setSelectedProvider] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
   const [models, setModels] = useState([]);
+  const [showProviderFilter, setShowProviderFilter] = useState(false);
   
   const sourceTool = location.state?.from;
 
@@ -34,11 +36,15 @@ export const Integrations = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Get unique providers
+  const providers = ['All', ...new Set(models.map(m => m.provider))];
+
   const filteredIntegrations = models.filter((integration) => {
     const matchesCategory = selectedCategory === 'All' || integration.category === selectedCategory;
+    const matchesProvider = selectedProvider === 'All' || integration.provider === selectedProvider;
     const matchesSearch = integration.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           integration.provider.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesProvider && matchesSearch;
   });
 
   if (loading) {
@@ -89,10 +95,41 @@ export const Integrations = () => {
                 className="text-lg"
               />
             </div>
-            <Button variant="secondary" icon={FiFilter} className="lg:w-auto">
-              Filter by Provider
+            <Button 
+              variant="secondary" 
+              icon={FiFilter} 
+              className="lg:w-auto"
+              onClick={() => setShowProviderFilter(!showProviderFilter)}
+            >
+              {selectedProvider !== 'All' ? selectedProvider : 'Filter by Provider'}
             </Button>
           </div>
+
+          {/* Provider Filter Dropdown */}
+          {showProviderFilter && (
+            <div className="animate-slide-up">
+              <GlassCard className="p-4">
+                <div className="flex flex-wrap items-center gap-3">
+                  {providers.map((provider) => (
+                    <button
+                      key={provider}
+                      onClick={() => {
+                        setSelectedProvider(provider);
+                        setShowProviderFilter(false);
+                      }}
+                      className={`px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                        selectedProvider === provider
+                          ? 'bg-white text-black shadow-lg'
+                          : 'glass-hover text-white'
+                      }`}
+                    >
+                      {provider}
+                    </button>
+                  ))}
+                </div>
+              </GlassCard>
+            </div>
+          )}
 
           {/* Category Pills */}
           <div className="flex flex-wrap items-center gap-3">

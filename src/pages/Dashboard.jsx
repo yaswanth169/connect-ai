@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   TrendingUp,
   TrendingDown,
@@ -9,6 +9,7 @@ import {
   Clock,
   CheckCircle2,
   BarChart3,
+  Cpu,
 } from 'lucide-react';
 import {
   GlassCard,
@@ -17,6 +18,7 @@ import {
   GlassCardDescription,
   GlassCardContent,
   Badge,
+  Loader,
 } from '../components/ui';
 import dashboardData from '../data/dashboard.json';
 
@@ -25,16 +27,37 @@ const iconMap = {
   Activity,
   Zap,
   Users,
+  Cpu,
 };
-
-const stats = dashboardData.stats.map((stat) => ({
-  ...stat,
-  icon: iconMap[stat.icon] || Database,
-}));
 
 export const Dashboard = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('7 Days');
+  const [loading, setLoading] = useState(true);
+  const [stats, setStats] = useState([]);
   const periods = ['1 Day', '7 Days', '30 Days'];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const mappedStats = dashboardData.stats.map((stat) => ({
+        ...stat,
+        icon: iconMap[stat.icon] || Database,
+      }));
+      setStats(mappedStats);
+      setLoading(false);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <Loader fullScreen tip="Loading MCP analytics..." />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#111111]">
@@ -105,13 +128,13 @@ export const Dashboard = () => {
 
         {/* Charts Section */}
         <div className="grid lg:grid-cols-2 gap-6 mb-12">
-          {/* Recent Queries */}
+          {/* MCP Performance */}
           <GlassCard hover>
             <GlassCardHeader>
               <div className="flex items-center justify-between">
                 <div>
-                  <GlassCardTitle>Query Performance</GlassCardTitle>
-                  <GlassCardDescription>Performance breakdown by HTTP method</GlassCardDescription>
+                  <GlassCardTitle>MCP Performance</GlassCardTitle>
+                  <GlassCardDescription>AI model request success rates</GlassCardDescription>
                 </div>
                 <Badge variant="info" className="shadow-lg">
                   <BarChart3 className="w-3 h-3 mr-1" strokeWidth={3} />
@@ -121,33 +144,33 @@ export const Dashboard = () => {
             </GlassCardHeader>
             <GlassCardContent>
               <div className="space-y-5">
-                {dashboardData.recentQueries.map((query, index) => (
-                  <div key={query.name} className="space-y-3 group" style={{ animationDelay: `${index * 100}ms` }}>
+                {dashboardData.mcpPerformance.map((model, index) => (
+                  <div key={model.name} className="space-y-3 group" style={{ animationDelay: `${index * 100}ms` }}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
-                        <span className="font-mono font-bold text-white text-sm px-3 py-1.5 bg-white/10 rounded-lg">
-                          {query.name}
+                        <span className="font-bold text-white text-sm px-3 py-1.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg border border-blue-500/30">
+                          {model.name}
                         </span>
                         <span className="text-sm font-semibold text-primary-300">
-                          {query.queries} queries
+                          {model.requests.toLocaleString()} requests
                         </span>
                       </div>
                       <span className={`text-sm font-bold px-3 py-1 rounded-lg ${
-                        query.success > 90 
+                        model.success > 95 
                           ? 'bg-green-500/20 text-green-400' 
                           : 'bg-amber-500/20 text-amber-400'
                       }`}>
-                        {query.success}%
+                        {model.success}%
                       </span>
                     </div>
                     <div className="h-3 bg-white/10 rounded-full overflow-hidden">
                       <div
                         className={`h-full rounded-full transition-all duration-500 ${
-                          query.success > 90 
+                          model.success > 95 
                             ? 'bg-gradient-to-r from-green-500 to-green-600' 
                             : 'bg-gradient-to-r from-amber-500 to-amber-600'
                         }`}
-                        style={{ width: `${query.success}%` }}
+                        style={{ width: `${model.success}%` }}
                       />
                     </div>
                   </div>
@@ -156,38 +179,38 @@ export const Dashboard = () => {
             </GlassCardContent>
           </GlassCard>
 
-          {/* Active Connections */}
+          {/* Active Tools */}
           <GlassCard hover>
             <GlassCardHeader>
               <div className="flex items-center justify-between">
                 <div>
-                  <GlassCardTitle>Active Connections</GlassCardTitle>
-                  <GlassCardDescription>Currently connected data sources</GlassCardDescription>
+                  <GlassCardTitle>Active Tool Integrations</GlassCardTitle>
+                  <GlassCardDescription>MCP-connected business tools</GlassCardDescription>
                 </div>
                 <Badge variant="success" className="shadow-lg">
                   <CheckCircle2 className="w-3 h-3 mr-1" strokeWidth={3} />
-                  {dashboardData.activeConnections.length} Active
+                  {dashboardData.activeTools.length} Active
                 </Badge>
               </div>
             </GlassCardHeader>
             <GlassCardContent>
               <div className="space-y-4">
-                {dashboardData.activeConnections.map((connection, index) => (
+                {dashboardData.activeTools.map((tool, index) => (
                   <div
-                    key={connection.name}
+                    key={tool.name}
                     className="flex items-center justify-between p-4 glass-hover rounded-2xl border border-white/10 group"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                        <Database className="w-6 h-6 text-black" strokeWidth={2.5} />
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                        <Zap className="w-6 h-6 text-white" strokeWidth={2.5} />
                       </div>
                       <div>
                         <div className="font-bold text-white mb-1">
-                          {connection.name}
+                          {tool.name}
                         </div>
                         <div className="text-xs font-semibold text-primary-400">
-                          {connection.queries} queries
+                          {tool.requests} requests via {tool.model}
                         </div>
                       </div>
                     </div>

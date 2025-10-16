@@ -1,92 +1,111 @@
 {
   "stats": [
     {
-      "title": "Total Rows",
-      "value": "3,425",
-      "change": "-1.1%",
-      "trend": "down",
-      "icon": "Database"
-    },
-    {
-      "title": "Queries",
-      "value": "109",
-      "change": "-19.8%",
-      "trend": "down",
-      "icon": "Activity"
-    },
-    {
-      "title": "Active Connections",
-      "value": "7",
-      "change": "-15.4%",
-      "trend": "down",
+      "title": "MCP Connections",
+      "value": "24",
+      "change": "+18.5%",
+      "trend": "up",
       "icon": "Zap"
     },
     {
-      "title": "Active Users",
-      "value": "6",
-      "change": "-83.7%",
-      "trend": "down",
-      "icon": "Users"
+      "title": "AI Models Connected",
+      "value": "8",
+      "change": "+33.3%",
+      "trend": "up",
+      "icon": "Cpu"
+    },
+    {
+      "title": "Tools Integrated",
+      "value": "12",
+      "change": "+25.0%",
+      "trend": "up",
+      "icon": "Database"
+    },
+    {
+      "title": "Active Workflows",
+      "value": "47",
+      "change": "+56.7%",
+      "trend": "up",
+      "icon": "Activity"
     }
   ],
-  "recentQueries": [
+  "mcpPerformance": [
     {
-      "name": "GET",
-      "queries": 36,
-      "success": 91.1,
+      "name": "GPT-4",
+      "requests": 1247,
+      "success": 98.9,
       "status": "success"
     },
     {
-      "name": "PATCH",
-      "queries": 34,
-      "success": 70.6,
-      "status": "warning"
-    },
-    {
-      "name": "POST",
-      "queries": 28,
-      "success": 71.4,
-      "status": "warning"
-    },
-    {
-      "name": "DELETE",
-      "queries": 4,
-      "success": 100,
+      "name": "Claude 3",
+      "requests": 892,
+      "success": 97.2,
       "status": "success"
+    },
+    {
+      "name": "Gemini Pro",
+      "requests": 634,
+      "success": 94.5,
+      "status": "success"
+    },
+    {
+      "name": "Llama 3",
+      "requests": 423,
+      "success": 91.8,
+      "status": "warning"
     }
   ],
-  "activeConnections": [
+  "activeTools": [
     {
-      "name": "SalesforceDev",
-      "queries": 3,
+      "name": "Jira",
+      "model": "GPT-4",
+      "requests": 342,
       "status": "success"
     },
     {
-      "name": "SalesforceProd",
-      "queries": 1,
+      "name": "Slack",
+      "model": "Claude 3",
+      "requests": 256,
+      "status": "success"
+    },
+    {
+      "name": "GitHub",
+      "model": "GPT-4",
+      "requests": 189,
+      "status": "success"
+    },
+    {
+      "name": "Confluence",
+      "model": "Gemini Pro",
+      "requests": 147,
       "status": "success"
     }
   ],
   "recentActivity": [
     {
       "time": "2 minutes ago",
-      "action": "New query executed on SalesforceDev",
-      "type": "query"
-    },
-    {
-      "time": "15 minutes ago",
-      "action": "Connection established with SalesforceProd",
+      "action": "MCP connection established: Jira → GPT-4",
       "type": "connection"
     },
     {
-      "time": "1 hour ago",
-      "action": "User John Doe logged in via SSO",
-      "type": "auth"
+      "time": "15 minutes ago",
+      "action": "New workflow created: Auto-assign GitHub issues",
+      "type": "workflow"
     },
     {
-      "time": "3 hours ago",
-      "action": "Data sync completed for MySQL database",
-      "type": "sync"
+      "time": "45 minutes ago",
+      "action": "Claude 3 Opus model connected successfully",
+      "type": "integration"
+    },
+    {
+      "time": "1 hour ago",
+      "action": "Tool request submitted: Salesforce integration",
+      "type": "request"
+    },
+    {
+      "time": "2 hours ago",
+      "action": "MCP endpoint updated for Slack integration",
+      "type": "config"
     }
   ]
 }
