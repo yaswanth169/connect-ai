@@ -13,23 +13,12 @@ import {
   LogIn,
   X,
   Zap,
-  Sparkles,
-  LogOut,
+  MessageSquare,
 } from 'lucide-react';
 import { Button } from '../ui';
+import FeedbackModal from '../FeedbackModal';
 
-interface NavItem {
-  label: string;
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
-  path: string;
-}
-
-interface NavSection {
-  title: string;
-  items: NavItem[];
-}
-
-const navigationSections: NavSection[] = [
+const navigationSections = [
   {
     title: 'Overview',
     items: [
@@ -61,25 +50,9 @@ const navigationSections: NavSection[] = [
   },
 ];
 
-interface SidebarProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
+export const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation();
-  const [user, setUser] = useState<{ name: string; email: string } | null>(null);
-
-  const handleSSOLogin = () => {
-    setUser({
-      name: 'John Doe',
-      email: 'john.doe@company.com',
-    });
-  };
-
-  const handleLogout = () => {
-    setUser(null);
-  };
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
 
   return (
     <>
@@ -166,44 +139,37 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           ))}
         </nav>
 
-        {/* SSO Login Section */}
-        <div className="p-4 border-t border-white/10">
-          {user ? (
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
-                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-black font-bold text-lg shadow-lg">
-                  {user.name.charAt(0)}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-white truncate">
-                    {user.name}
-                  </p>
-                  <p className="text-xs text-primary-400 truncate">{user.email}</p>
-                </div>
-              </div>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="w-full"
-                onClick={handleLogout}
-                icon={LogOut}
-              >
-                Logout
-              </Button>
-            </div>
-          ) : (
-            <Button
-              variant="outline"
-              size="md"
-              icon={LogIn}
-              className="w-full"
-              onClick={handleSSOLogin}
-            >
-              SSO Login
-            </Button>
-          )}
+        {/* Footer Actions */}
+        <div className="p-4 border-t border-white/10 space-y-3">
+          <Button
+            variant="ghost"
+            size="md"
+            icon={MessageSquare}
+            className="w-full justify-start"
+            onClick={() => setFeedbackOpen(true)}
+          >
+            Send Feedback
+          </Button>
+          
+          <Button
+            variant="outline"
+            size="md"
+            icon={LogIn}
+            className="w-full"
+            onClick={() => {
+              // SSO login will be implemented later
+              console.log('SSO Login clicked');
+            }}
+          >
+            SSO Login
+          </Button>
         </div>
       </aside>
+
+      <FeedbackModal 
+        isOpen={feedbackOpen} 
+        onClose={() => setFeedbackOpen(false)} 
+      />
     </>
   );
 };

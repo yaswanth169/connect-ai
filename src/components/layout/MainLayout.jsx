@@ -3,17 +3,17 @@ import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Header from './Header';
 
-export const MainLayout: React.FC = () => {
+export const MainLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[#0d0d0d]">
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       
       <div className="lg:pl-80">
         <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
         
-        <main>
+        <main className="min-h-screen">
           <Outlet />
         </main>
       </div>
@@ -22,4 +22,3 @@ export const MainLayout: React.FC = () => {
 };
 
 export default MainLayout;
-

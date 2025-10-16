@@ -67,9 +67,9 @@ const stats = [
   { value: '<50ms', label: 'Avg Latency', icon: Clock },
 ];
 
-export const Landing: React.FC = () => {
+export const Landing = () => {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[#0d0d0d]">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32">
@@ -127,7 +127,7 @@ export const Landing: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#0d0d0d]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-6">
@@ -205,7 +205,7 @@ export const Landing: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#0d0d0d]">
         <div className="max-w-5xl mx-auto">
           <GlassCard className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 border-white/20 shadow-2xl">
             <div className="text-center py-20 px-8">
@@ -235,7 +235,7 @@ export const Landing: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-12 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm">
+      <footer className="border-t border-white/10 py-12 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a]/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">

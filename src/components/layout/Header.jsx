@@ -2,11 +2,7 @@ import React from 'react';
 import { Menu, Bell, Settings, Search } from 'lucide-react';
 import { Button } from '../ui';
 
-interface HeaderProps {
-  onMenuClick: () => void;
-}
-
-export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
+export const Header = ({ onMenuClick }) => {
   return (
     <header className="sticky top-0 z-30 glass-dark border-b border-white/10">
       <div className="flex items-center justify-between px-6 py-4">

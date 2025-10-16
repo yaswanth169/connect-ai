@@ -1,13 +1,6 @@
 import React from 'react';
-import { LucideIcon } from 'lucide-react';
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  error?: string;
-  icon?: LucideIcon;
-}
-
-export const Input: React.FC<InputProps> = ({
+export const Input = ({
   label,
   error,
   icon: Icon,
@@ -42,4 +35,3 @@ export const Input: React.FC<InputProps> = ({
     </div>
   );
 };
-

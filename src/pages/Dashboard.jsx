@@ -20,7 +20,7 @@ import {
 } from '../components/ui';
 import dashboardData from '../data/dashboard.json';
 
-const iconMap: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
+const iconMap = {
   Database,
   Activity,
   Zap,
@@ -32,12 +32,12 @@ const stats = dashboardData.stats.map((stat) => ({
   icon: iconMap[stat.icon] || Database,
 }));
 
-export const Dashboard: React.FC = () => {
+export const Dashboard = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('7 Days');
   const periods = ['1 Day', '7 Days', '30 Days'];
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[#0d0d0d]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="mb-12 animate-fade-in">

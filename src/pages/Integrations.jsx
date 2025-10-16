@@ -5,14 +5,14 @@ import integrationsData from '../data/integrations.json';
 
 const categories = ['All', 'AI', 'BI & Reporting', 'Dev', 'ETL', 'iPaaS', 'No-Code/Low-Code', 'CRM', 'ERP'];
 
-const categoryIcons: Record<string, React.ReactNode> = {
+const categoryIcons = {
   'All': <Sparkles className="w-4 h-4" strokeWidth={2.5} />,
   'AI': <Zap className="w-4 h-4" strokeWidth={2.5} />,
   'BI & Reporting': <TrendingUp className="w-4 h-4" strokeWidth={2.5} />,
   'CRM': <Star className="w-4 h-4" strokeWidth={2.5} />,
 };
 
-export const Integrations: React.FC = () => {
+export const Integrations = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -23,7 +23,7 @@ export const Integrations: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[#0d0d0d]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Header */}
         <div className="text-center mb-16 animate-fade-in">

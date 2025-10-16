@@ -7,7 +7,7 @@ import {
 import { GlassCard, Button, Badge, Input } from '../components/ui';
 import sourcesData from '../data/sources.json';
 
-export const Sources: React.FC = () => {
+export const Sources = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -20,7 +20,7 @@ export const Sources: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[#0d0d0d]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="mb-12 animate-fade-in">

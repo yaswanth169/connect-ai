@@ -1,12 +1,6 @@
 import React from 'react';
 
-interface BadgeProps {
-  children: React.ReactNode;
-  variant?: 'default' | 'success' | 'warning' | 'danger' | 'info';
-  className?: string;
-}
-
-export const Badge: React.FC<BadgeProps> = ({
+export const Badge = ({
   children,
   variant = 'default',
   className = '',
@@ -27,4 +21,3 @@ export const Badge: React.FC<BadgeProps> = ({
     </span>
   );
 };
-

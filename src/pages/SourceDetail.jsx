@@ -25,15 +25,15 @@ import {
 } from '../components/ui';
 import sourcesData from '../data/sources.json';
 
-export const SourceDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+export const SourceDetail = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const source = sourcesData.find((s) => s.id === id);
 
   if (!source) {
     return (
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-[#0d0d0d]">
         <div className="max-w-4xl mx-auto px-4 py-24">
           <GlassCard className="text-center py-16">
             <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-white/10 flex items-center justify-center">
@@ -60,7 +60,7 @@ export const SourceDetail: React.FC = () => {
   const isConnected = source.status === 'connected';
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[#0d0d0d]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Back Button */}
         <div className="mb-8 animate-fade-in">
