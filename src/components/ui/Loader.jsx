@@ -7,7 +7,7 @@ export const Loader = ({ size = 'large', tip = 'Loading...', fullScreen = false 
 
   if (fullScreen) {
     return (
-      <div className="fixed inset-0 bg-[#0d0d0d] flex items-center justify-center z-50">
+      <div className="fixed inset-0 bg-[#111111] flex items-center justify-center z-50">
         <div className="text-center">
           <Spin indicator={antIcon} />
           <p className="mt-6 text-white text-lg font-medium">{tip}</p>
