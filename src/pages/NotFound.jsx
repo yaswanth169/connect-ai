@@ -5,7 +5,7 @@ import { Button, GlassCard } from '../components/ui';
 
 export const NotFound = () => {
   return (
-    <div className="min-h-screen bg-[#0d0d0d] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#111111] flex items-center justify-center px-4">
       <GlassCard hover className="max-w-2xl w-full">
         <div className="text-center py-16 px-8">
           <div className="mb-8">

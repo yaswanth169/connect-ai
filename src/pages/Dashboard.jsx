@@ -37,7 +37,7 @@ export const Dashboard = () => {
   const periods = ['1 Day', '7 Days', '30 Days'];
 
   return (
-    <div className="min-h-screen bg-[#0d0d0d]">
+    <div className="min-h-screen bg-[#111111]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="mb-12 animate-fade-in">
@@ -59,7 +59,7 @@ export const Dashboard = () => {
                 onClick={() => setSelectedPeriod(period)}
                 className={`px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
                   selectedPeriod === period
-                    ? 'bg-white text-black shadow-lg transform scale-105'
+                    ? 'bg-white text-black shadow-lg'
                     : 'glass hover:shadow-glass-lg text-white'
                 }`}
               >
@@ -218,7 +218,7 @@ export const Dashboard = () => {
               {dashboardData.recentActivity.map((activity, index) => (
                 <div key={index} className="flex items-start gap-5 group" style={{ animationDelay: `${index * 100}ms` }}>
                   <div className="relative">
-                    <div className="w-3 h-3 rounded-full bg-white group-hover:scale-125 transition-transform" />
+                    <div className="w-3 h-3 rounded-full bg-white transition-colors" />
                     {index < dashboardData.recentActivity.length - 1 && (
                       <div className="absolute top-3 left-1/2 -translate-x-1/2 w-0.5 h-6 bg-white/20" />
                     )}

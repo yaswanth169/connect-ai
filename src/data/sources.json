@@ -1,173 +1,259 @@
 [
   {
-    "id": "mysql-prod",
-    "name": "MySQL Production",
-    "type": "MySQL",
-    "status": "connected",
-    "rows": 45230,
-    "description": "Primary production database for customer data and transactions",
-    "host": "prod-mysql-01.company.com",
-    "port": 3306,
-    "database": "production_db",
-    "lastSync": "2025-10-16T10:30:00Z",
-    "version": "8.0.32",
-    "size": "2.4 GB",
-    "tables": 42,
-    "connections": 15,
-    "uptime": "99.9%"
+    "id": "jira",
+    "name": "Jira",
+    "type": "Project Management",
+    "status": "available",
+    "description": "Project tracking and agile project management tool",
+    "provider": "Atlassian",
+    "category": "Productivity",
+    "toolsCount": 12,
+    "icon": "FiLayout",
+    "popular": true,
+    "tools": [
+      {
+        "id": "create-issue",
+        "name": "Create Issue",
+        "description": "Create a new issue in any project"
+      },
+      {
+        "id": "create-story",
+        "name": "Create Story",
+        "description": "Create a new user story"
+      },
+      {
+        "id": "assign-task",
+        "name": "Assign Task",
+        "description": "Assign tasks to team members"
+      },
+      {
+        "id": "update-status",
+        "name": "Update Status",
+        "description": "Update issue status"
+      },
+      {
+        "id": "add-comment",
+        "name": "Add Comment",
+        "description": "Add comments to issues"
+      },
+      {
+        "id": "create-sprint",
+        "name": "Create Sprint",
+        "description": "Create and manage sprints"
+      }
+    ]
   },
   {
-    "id": "postgres-dev",
-    "name": "PostgreSQL Dev",
-    "type": "PostgreSQL",
-    "status": "connected",
-    "rows": 12450,
-    "description": "Development environment database for testing and staging",
-    "host": "dev-postgres-01.company.com",
-    "port": 5432,
-    "database": "development_db",
-    "lastSync": "2025-10-16T09:15:00Z",
-    "version": "15.3",
-    "size": "890 MB",
-    "tables": 28,
-    "connections": 8,
-    "uptime": "99.5%"
+    "id": "confluence",
+    "name": "Confluence",
+    "type": "Documentation",
+    "status": "available",
+    "description": "Team collaboration and documentation platform",
+    "provider": "Atlassian",
+    "category": "Productivity",
+    "toolsCount": 8,
+    "icon": "FiFileText",
+    "popular": true,
+    "tools": [
+      {
+        "id": "create-page",
+        "name": "Create Page",
+        "description": "Create a new documentation page"
+      },
+      {
+        "id": "update-page",
+        "name": "Update Page",
+        "description": "Update existing documentation"
+      },
+      {
+        "id": "search-content",
+        "name": "Search Content",
+        "description": "Search across all spaces"
+      },
+      {
+        "id": "create-space",
+        "name": "Create Space",
+        "description": "Create a new workspace"
+      }
+    ]
   },
   {
-    "id": "mongodb-analytics",
-    "name": "MongoDB Analytics",
-    "type": "MongoDB",
-    "status": "offline",
-    "rows": 89340,
-    "description": "Analytics and reporting database for business intelligence",
-    "host": "analytics-mongo-01.company.com",
-    "port": 27017,
-    "database": "analytics_db",
-    "lastSync": "2025-10-15T18:45:00Z",
-    "version": "6.0.5",
-    "size": "5.2 GB",
-    "tables": 18,
-    "connections": 0,
-    "uptime": "95.2%"
+    "id": "slack",
+    "name": "Slack",
+    "type": "Communication",
+    "status": "available",
+    "description": "Team communication and collaboration platform",
+    "provider": "Salesforce",
+    "category": "Communication",
+    "toolsCount": 15,
+    "icon": "FiMessageSquare",
+    "popular": true,
+    "tools": [
+      {
+        "id": "send-message",
+        "name": "Send Message",
+        "description": "Send messages to channels or users"
+      },
+      {
+        "id": "create-channel",
+        "name": "Create Channel",
+        "description": "Create new channels"
+      },
+      {
+        "id": "upload-file",
+        "name": "Upload File",
+        "description": "Share files with team"
+      },
+      {
+        "id": "schedule-message",
+        "name": "Schedule Message",
+        "description": "Schedule messages for later"
+      }
+    ]
   },
   {
-    "id": "salesforce-crm",
-    "name": "Salesforce CRM",
-    "type": "Salesforce",
-    "status": "connected",
-    "rows": 156780,
-    "description": "Customer relationship management data including leads, opportunities, and accounts",
-    "host": "company.salesforce.com",
-    "port": 443,
-    "database": "CRM",
-    "lastSync": "2025-10-16T11:00:00Z",
-    "version": "Winter '25",
-    "size": "8.7 GB",
-    "tables": 85,
-    "connections": 24,
-    "uptime": "99.95%"
+    "id": "github",
+    "name": "GitHub",
+    "type": "Version Control",
+    "status": "available",
+    "description": "Code hosting and version control platform",
+    "provider": "Microsoft",
+    "category": "Development",
+    "toolsCount": 20,
+    "icon": "FiGithub",
+    "popular": true,
+    "tools": [
+      {
+        "id": "create-repo",
+        "name": "Create Repository",
+        "description": "Create new Git repositories"
+      },
+      {
+        "id": "create-pr",
+        "name": "Create Pull Request",
+        "description": "Open pull requests for review"
+      },
+      {
+        "id": "create-issue",
+        "name": "Create Issue",
+        "description": "Report bugs and track work"
+      },
+      {
+        "id": "review-code",
+        "name": "Review Code",
+        "description": "Review and comment on code"
+      }
+    ]
   },
   {
-    "id": "oracle-erp",
-    "name": "Oracle ERP",
-    "type": "Oracle",
-    "status": "connected",
-    "rows": 234560,
-    "description": "Enterprise resource planning system for finance and operations",
-    "host": "erp-oracle-01.company.com",
-    "port": 1521,
-    "database": "ERP_PROD",
-    "lastSync": "2025-10-16T10:45:00Z",
-    "version": "19c",
-    "size": "15.3 GB",
-    "tables": 127,
-    "connections": 32,
-    "uptime": "99.8%"
+    "id": "notion",
+    "name": "Notion",
+    "type": "Workspace",
+    "status": "available",
+    "description": "All-in-one workspace for notes, docs, and projects",
+    "provider": "Notion Labs",
+    "category": "Productivity",
+    "toolsCount": 10,
+    "icon": "FiBook",
+    "popular": false,
+    "tools": [
+      {
+        "id": "create-page",
+        "name": "Create Page",
+        "description": "Create new pages and documents"
+      },
+      {
+        "id": "create-database",
+        "name": "Create Database",
+        "description": "Create structured databases"
+      },
+      {
+        "id": "query-database",
+        "name": "Query Database",
+        "description": "Search and filter database entries"
+      }
+    ]
   },
   {
-    "id": "redis-cache",
-    "name": "Redis Cache",
-    "type": "Redis",
-    "status": "connected",
-    "rows": 8920,
-    "description": "In-memory data store for caching and session management",
-    "host": "cache-redis-01.company.com",
-    "port": 6379,
-    "database": "cache_db",
-    "lastSync": "2025-10-16T11:05:00Z",
-    "version": "7.0.11",
-    "size": "145 MB",
-    "tables": 5,
-    "connections": 45,
-    "uptime": "99.99%"
+    "id": "trello",
+    "name": "Trello",
+    "type": "Project Management",
+    "status": "available",
+    "description": "Visual project management with boards and cards",
+    "provider": "Atlassian",
+    "category": "Productivity",
+    "toolsCount": 9,
+    "icon": "FiTrello",
+    "popular": false,
+    "tools": [
+      {
+        "id": "create-board",
+        "name": "Create Board",
+        "description": "Create new project boards"
+      },
+      {
+        "id": "create-card",
+        "name": "Create Card",
+        "description": "Add new cards to lists"
+      },
+      {
+        "id": "move-card",
+        "name": "Move Card",
+        "description": "Move cards between lists"
+      }
+    ]
   },
   {
-    "id": "snowflake-warehouse",
-    "name": "Snowflake Data Warehouse",
-    "type": "Snowflake",
-    "status": "connected",
-    "rows": 567890,
-    "description": "Cloud data warehouse for large-scale analytics and data science",
-    "host": "company.snowflakecomputing.com",
-    "port": 443,
-    "database": "ANALYTICS_WH",
-    "lastSync": "2025-10-16T10:50:00Z",
-    "version": "7.40",
-    "size": "42.8 GB",
-    "tables": 156,
-    "connections": 18,
-    "uptime": "99.9%"
+    "id": "asana",
+    "name": "Asana",
+    "type": "Project Management",
+    "status": "available",
+    "description": "Work management platform for teams",
+    "provider": "Asana Inc.",
+    "category": "Productivity",
+    "toolsCount": 11,
+    "icon": "FiCheckCircle",
+    "popular": false,
+    "tools": [
+      {
+        "id": "create-task",
+        "name": "Create Task",
+        "description": "Create new tasks"
+      },
+      {
+        "id": "assign-task",
+        "name": "Assign Task",
+        "description": "Assign tasks to team members"
+      },
+      {
+        "id": "create-project",
+        "name": "Create Project",
+        "description": "Start new projects"
+      }
+    ]
   },
   {
-    "id": "bigquery-data",
-    "name": "Google BigQuery",
-    "type": "BigQuery",
-    "status": "connected",
-    "rows": 892340,
-    "description": "Serverless data warehouse for big data analytics",
-    "host": "bigquery.googleapis.com",
-    "port": 443,
-    "database": "analytics_dataset",
-    "lastSync": "2025-10-16T10:55:00Z",
-    "version": "Latest",
-    "size": "67.5 GB",
-    "tables": 89,
-    "connections": 12,
-    "uptime": "99.95%"
-  },
-  {
-    "id": "dynamodb-prod",
-    "name": "AWS DynamoDB",
-    "type": "DynamoDB",
-    "status": "offline",
-    "rows": 445670,
-    "description": "NoSQL database service for high-performance applications",
-    "host": "dynamodb.us-east-1.amazonaws.com",
-    "port": 443,
-    "database": "prod_tables",
-    "lastSync": "2025-10-15T22:30:00Z",
-    "version": "Latest",
-    "size": "12.4 GB",
-    "tables": 34,
-    "connections": 0,
-    "uptime": "98.7%"
-  },
-  {
-    "id": "cassandra-cluster",
-    "name": "Cassandra Cluster",
-    "type": "Cassandra",
-    "status": "connected",
-    "rows": 678920,
-    "description": "Distributed NoSQL database for high availability and scalability",
-    "host": "cassandra-cluster-01.company.com",
-    "port": 9042,
-    "database": "distributed_db",
-    "lastSync": "2025-10-16T10:40:00Z",
-    "version": "4.1.3",
-    "size": "28.9 GB",
-    "tables": 67,
-    "connections": 22,
-    "uptime": "99.7%"
+    "id": "linear",
+    "name": "Linear",
+    "type": "Issue Tracking",
+    "status": "available",
+    "description": "Modern issue tracking for software teams",
+    "provider": "Linear",
+    "category": "Development",
+    "toolsCount": 8,
+    "icon": "FiTarget",
+    "popular": false,
+    "tools": [
+      {
+        "id": "create-issue",
+        "name": "Create Issue",
+        "description": "Create and track issues"
+      },
+      {
+        "id": "update-status",
+        "name": "Update Status",
+        "description": "Update issue status"
+      }
+    ]
   }
 ]
-

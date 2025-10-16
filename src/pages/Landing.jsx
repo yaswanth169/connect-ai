@@ -69,7 +69,7 @@ const stats = [
 
 export const Landing = () => {
   return (
-    <div className="min-h-screen bg-[#0d0d0d]">
+    <div className="min-h-screen bg-[#111111]">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32">
@@ -112,7 +112,7 @@ export const Landing = () => {
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div className="py-6">
-                      <Icon className="w-8 h-8 mx-auto mb-3 text-white group-hover:scale-110 transition-transform" strokeWidth={2.5} />
+                      <Icon className="w-8 h-8 mx-auto mb-3 text-white transition-colors" strokeWidth={2.5} />
                       <div className="text-4xl font-bold text-gradient mb-2">
                         {stat.value}
                       </div>
@@ -127,7 +127,7 @@ export const Landing = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#0d0d0d]">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#111111]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-6">
@@ -182,7 +182,7 @@ export const Landing = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="py-8">
-                  <div className="text-5xl mb-4 transform group-hover:scale-125 transition-transform">
+                  <div className="text-5xl mb-4">
                     {integration.icon}
                   </div>
                   <div className="text-lg font-bold text-white mb-2">
@@ -205,7 +205,7 @@ export const Landing = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#0d0d0d]">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#111111]">
         <div className="max-w-5xl mx-auto">
           <GlassCard className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 border-white/20 shadow-2xl">
             <div className="text-center py-20 px-8">

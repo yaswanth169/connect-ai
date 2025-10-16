@@ -33,7 +33,7 @@ export const SourceDetail = () => {
 
   if (!source) {
     return (
-      <div className="min-h-screen bg-[#0d0d0d]">
+      <div className="min-h-screen bg-[#111111]">
         <div className="max-w-4xl mx-auto px-4 py-24">
           <GlassCard className="text-center py-16">
             <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-white/10 flex items-center justify-center">
@@ -60,7 +60,7 @@ export const SourceDetail = () => {
   const isConnected = source.status === 'connected';
 
   return (
-    <div className="min-h-screen bg-[#0d0d0d]">
+    <div className="min-h-screen bg-[#111111]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Back Button */}
         <div className="mb-8 animate-fade-in">
@@ -246,7 +246,7 @@ export const SourceDetail = () => {
               ].map((metric, index) => (
                 <div key={metric.label} className="text-center group" style={{ animationDelay: `${index * 100}ms` }}>
                   <div className="text-sm font-semibold text-primary-300 mb-3">{metric.label}</div>
-                  <div className="text-4xl font-bold text-gradient group-hover:scale-110 transition-transform">
+                  <div className="text-4xl font-bold text-gradient transition-colors">
                     {metric.value}
                   </div>
                 </div>

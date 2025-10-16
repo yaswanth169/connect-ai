@@ -1,99 +1,134 @@
 [
   {
-    "id": "chatgpt",
-    "name": "ChatGPT",
-    "category": "AI",
-    "icon": "🤖",
-    "count": 8,
-    "connected": false
+    "id": "gpt-4",
+    "name": "GPT-4",
+    "provider": "OpenAI",
+    "category": "LLM",
+    "icon": "FiCpu",
+    "description": "Most capable GPT model for complex tasks",
+    "connected": false,
+    "contextWindow": "128K tokens",
+    "pricing": "$0.03/1K tokens"
   },
   {
-    "id": "claude-ai",
-    "name": "Claude AI",
-    "category": "AI",
-    "icon": "🤖",
-    "count": 8,
-    "connected": false
+    "id": "gpt-3.5-turbo",
+    "name": "GPT-3.5 Turbo",
+    "provider": "OpenAI",
+    "category": "LLM",
+    "icon": "FiZap",
+    "description": "Fast and cost-effective model",
+    "connected": true,
+    "contextWindow": "16K tokens",
+    "pricing": "$0.001/1K tokens"
   },
   {
-    "id": "copilot-studio",
-    "name": "Copilot Studio",
-    "category": "AI",
-    "icon": "💻",
-    "count": 8,
-    "connected": false
+    "id": "claude-3-opus",
+    "name": "Claude 3 Opus",
+    "provider": "Anthropic",
+    "category": "LLM",
+    "icon": "FiCpu",
+    "description": "Most powerful Claude model",
+    "connected": false,
+    "contextWindow": "200K tokens",
+    "pricing": "$0.015/1K tokens"
   },
   {
-    "id": "crewai",
-    "name": "CrewAI",
-    "category": "AI",
-    "icon": "🤖",
-    "count": 8,
-    "connected": false
+    "id": "claude-3-sonnet",
+    "name": "Claude 3 Sonnet",
+    "provider": "Anthropic",
+    "category": "LLM",
+    "icon": "FiZap",
+    "description": "Balanced performance and speed",
+    "connected": true,
+    "contextWindow": "200K tokens",
+    "pricing": "$0.003/1K tokens"
   },
   {
-    "id": "gemini-cli",
-    "name": "Gemini CLI",
-    "category": "AI",
-    "icon": "✨",
-    "count": 8,
-    "connected": false
+    "id": "llama-3-70b",
+    "name": "Llama 3 70B",
+    "provider": "Meta",
+    "category": "Open Source",
+    "icon": "FiCode",
+    "description": "Open source LLM by Meta",
+    "connected": false,
+    "contextWindow": "8K tokens",
+    "pricing": "Self-hosted"
   },
   {
-    "id": "langchain",
-    "name": "LangChain",
-    "category": "AI",
-    "icon": "⛓️",
-    "count": 8,
-    "connected": false
+    "id": "gemini-pro",
+    "name": "Gemini Pro",
+    "provider": "Google",
+    "category": "LLM",
+    "icon": "FiStar",
+    "description": "Google's multimodal AI model",
+    "connected": false,
+    "contextWindow": "32K tokens",
+    "pricing": "$0.00025/1K tokens"
   },
   {
-    "id": "mcp",
-    "name": "MCP",
-    "category": "AI",
-    "icon": "🔌",
-    "count": 8,
-    "connected": true
+    "id": "mistral-large",
+    "name": "Mistral Large",
+    "provider": "Mistral AI",
+    "category": "LLM",
+    "icon": "FiCpu",
+    "description": "High-performance European LLM",
+    "connected": false,
+    "contextWindow": "32K tokens",
+    "pricing": "$0.004/1K tokens"
   },
   {
-    "id": "n8n",
-    "name": "n8n",
-    "category": "No-Code/Low-Code",
-    "icon": "🔄",
-    "count": 8,
-    "connected": false
+    "id": "bedrock-claude",
+    "name": "AWS Bedrock (Claude)",
+    "provider": "AWS",
+    "category": "Cloud Platform",
+    "icon": "FiCloud",
+    "description": "Claude models via AWS Bedrock",
+    "connected": false,
+    "contextWindow": "200K tokens",
+    "pricing": "Pay per use"
   },
   {
-    "id": "powerbi",
-    "name": "Power BI",
-    "category": "BI & Reporting",
-    "icon": "📊",
-    "count": 24,
-    "connected": false
+    "id": "azure-openai",
+    "name": "Azure OpenAI",
+    "provider": "Microsoft",
+    "category": "Cloud Platform",
+    "icon": "FiCloud",
+    "description": "OpenAI models on Azure",
+    "connected": false,
+    "contextWindow": "128K tokens",
+    "pricing": "Enterprise pricing"
   },
   {
-    "id": "tableau",
-    "name": "Tableau",
-    "category": "BI & Reporting",
-    "icon": "📈",
-    "count": 24,
-    "connected": false
+    "id": "grok-1",
+    "name": "Grok-1",
+    "provider": "xAI",
+    "category": "LLM",
+    "icon": "FiZap",
+    "description": "Real-time knowledge model",
+    "connected": false,
+    "contextWindow": "8K tokens",
+    "pricing": "Beta access"
   },
   {
-    "id": "salesforce",
-    "name": "Salesforce",
-    "category": "CRM",
-    "icon": "☁️",
-    "count": 15,
-    "connected": true
+    "id": "cohere-command",
+    "name": "Cohere Command",
+    "provider": "Cohere",
+    "category": "LLM",
+    "icon": "FiCpu",
+    "description": "Business-focused LLM",
+    "connected": false,
+    "contextWindow": "4K tokens",
+    "pricing": "$0.0015/1K tokens"
   },
   {
-    "id": "sap-ariba",
-    "name": "SAP Ariba",
-    "category": "ERP",
-    "icon": "🏢",
-    "count": 12,
-    "connected": false
+    "id": "custom-model",
+    "name": "Custom Model",
+    "provider": "Your Infrastructure",
+    "category": "Custom",
+    "icon": "FiSettings",
+    "description": "Connect your own fine-tuned models",
+    "connected": false,
+    "contextWindow": "Variable",
+    "pricing": "Your cost"
   }
 ]
-
