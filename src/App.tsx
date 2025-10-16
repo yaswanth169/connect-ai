@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { MainLayout } from './components/layout';
-import { Landing, Dashboard, Integrations, Sources, NotFound } from './pages';
+import { Landing, Dashboard, Integrations, Sources, SourceDetail, NotFound } from './pages';
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sources" element={<Sources />} />
+          <Route path="/sources/:id" element={<SourceDetail />} />
           <Route path="/integrations" element={<Integrations />} />
           <Route path="/workspaces" element={<Navigate to="/dashboard" replace />} />
           <Route path="/explorer" element={<Navigate to="/dashboard" replace />} />

@@ -7,13 +7,13 @@ export const MainLayout: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-dark-50">
+    <div className="min-h-screen bg-black">
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       
-      <div className="lg:pl-64">
+      <div className="lg:pl-80">
         <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
         
-        <main className="p-4 sm:p-6 lg:p-8">
+        <main>
           <Outlet />
         </main>
       </div>

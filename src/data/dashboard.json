@@ -1,0 +1,93 @@
+{
+  "stats": [
+    {
+      "title": "Total Rows",
+      "value": "3,425",
+      "change": "-1.1%",
+      "trend": "down",
+      "icon": "Database"
+    },
+    {
+      "title": "Queries",
+      "value": "109",
+      "change": "-19.8%",
+      "trend": "down",
+      "icon": "Activity"
+    },
+    {
+      "title": "Active Connections",
+      "value": "7",
+      "change": "-15.4%",
+      "trend": "down",
+      "icon": "Zap"
+    },
+    {
+      "title": "Active Users",
+      "value": "6",
+      "change": "-83.7%",
+      "trend": "down",
+      "icon": "Users"
+    }
+  ],
+  "recentQueries": [
+    {
+      "name": "GET",
+      "queries": 36,
+      "success": 91.1,
+      "status": "success"
+    },
+    {
+      "name": "PATCH",
+      "queries": 34,
+      "success": 70.6,
+      "status": "warning"
+    },
+    {
+      "name": "POST",
+      "queries": 28,
+      "success": 71.4,
+      "status": "warning"
+    },
+    {
+      "name": "DELETE",
+      "queries": 4,
+      "success": 100,
+      "status": "success"
+    }
+  ],
+  "activeConnections": [
+    {
+      "name": "SalesforceDev",
+      "queries": 3,
+      "status": "success"
+    },
+    {
+      "name": "SalesforceProd",
+      "queries": 1,
+      "status": "success"
+    }
+  ],
+  "recentActivity": [
+    {
+      "time": "2 minutes ago",
+      "action": "New query executed on SalesforceDev",
+      "type": "query"
+    },
+    {
+      "time": "15 minutes ago",
+      "action": "Connection established with SalesforceProd",
+      "type": "connection"
+    },
+    {
+      "time": "1 hour ago",
+      "action": "User John Doe logged in via SSO",
+      "type": "auth"
+    },
+    {
+      "time": "3 hours ago",
+      "action": "Data sync completed for MySQL database",
+      "type": "sync"
+    }
+  ]
+}
+

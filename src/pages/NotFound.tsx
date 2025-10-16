@@ -1,29 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, ArrowLeft } from 'lucide-react';
-import { Button } from '../components/ui';
+import { Home, ArrowLeft, Search } from 'lucide-react';
+import { Button, GlassCard } from '../components/ui';
 
 export const NotFound: React.FC = () => {
   return (
-    <div className="min-h-screen bg-dark-50 flex items-center justify-center px-4">
-      <div className="text-center">
-        <h1 className="text-9xl font-bold text-primary-600 mb-4">404</h1>
-        <h2 className="text-3xl font-bold text-dark-900 mb-4">Page Not Found</h2>
-        <p className="text-dark-600 mb-8 max-w-md">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="flex items-center justify-center gap-4">
-          <Link to="/">
-            <Button icon={Home}>Go Home</Button>
-          </Link>
-          <Button variant="ghost" icon={ArrowLeft} onClick={() => window.history.back()}>
-            Go Back
-          </Button>
+    <div className="min-h-screen bg-black flex items-center justify-center px-4">
+      <GlassCard hover className="max-w-2xl w-full">
+        <div className="text-center py-16 px-8">
+          <div className="mb-8">
+            <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-white/10 mb-6">
+              <Search className="w-16 h-16 text-primary-400" strokeWidth={2} />
+            </div>
+            <h1 className="text-9xl font-bold mb-4">
+              <span className="text-gradient">404</span>
+            </h1>
+            <h2 className="text-4xl font-bold text-white mb-4">Page Not Found</h2>
+            <p className="text-xl text-primary-300 max-w-md mx-auto leading-relaxed">
+              The page you're looking for doesn't exist or has been moved to a new location.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link to="/">
+              <Button icon={Home} size="lg">
+                Go to Homepage
+              </Button>
+            </Link>
+            <Button 
+              variant="secondary" 
+              icon={ArrowLeft} 
+              size="lg"
+              onClick={() => window.history.back()}
+            >
+              Go Back
+            </Button>
+          </div>
         </div>
-      </div>
+      </GlassCard>
     </div>
   );
 };
 
 export default NotFound;
-

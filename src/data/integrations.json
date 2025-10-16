@@ -1,0 +1,99 @@
+[
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "category": "AI",
+    "icon": "🤖",
+    "count": 8,
+    "connected": false
+  },
+  {
+    "id": "claude-ai",
+    "name": "Claude AI",
+    "category": "AI",
+    "icon": "🤖",
+    "count": 8,
+    "connected": false
+  },
+  {
+    "id": "copilot-studio",
+    "name": "Copilot Studio",
+    "category": "AI",
+    "icon": "💻",
+    "count": 8,
+    "connected": false
+  },
+  {
+    "id": "crewai",
+    "name": "CrewAI",
+    "category": "AI",
+    "icon": "🤖",
+    "count": 8,
+    "connected": false
+  },
+  {
+    "id": "gemini-cli",
+    "name": "Gemini CLI",
+    "category": "AI",
+    "icon": "✨",
+    "count": 8,
+    "connected": false
+  },
+  {
+    "id": "langchain",
+    "name": "LangChain",
+    "category": "AI",
+    "icon": "⛓️",
+    "count": 8,
+    "connected": false
+  },
+  {
+    "id": "mcp",
+    "name": "MCP",
+    "category": "AI",
+    "icon": "🔌",
+    "count": 8,
+    "connected": true
+  },
+  {
+    "id": "n8n",
+    "name": "n8n",
+    "category": "No-Code/Low-Code",
+    "icon": "🔄",
+    "count": 8,
+    "connected": false
+  },
+  {
+    "id": "powerbi",
+    "name": "Power BI",
+    "category": "BI & Reporting",
+    "icon": "📊",
+    "count": 24,
+    "connected": false
+  },
+  {
+    "id": "tableau",
+    "name": "Tableau",
+    "category": "BI & Reporting",
+    "icon": "📈",
+    "count": 24,
+    "connected": false
+  },
+  {
+    "id": "salesforce",
+    "name": "Salesforce",
+    "category": "CRM",
+    "icon": "☁️",
+    "count": 15,
+    "connected": true
+  },
+  {
+    "id": "sap-ariba",
+    "name": "SAP Ariba",
+    "category": "ERP",
+    "icon": "🏢",
+    "count": 12,
+    "connected": false
+  }
+]
+

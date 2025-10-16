@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   TrendingUp,
   TrendingDown,
@@ -6,235 +6,238 @@ import {
   Zap,
   Users,
   Activity,
+  Clock,
+  CheckCircle2,
+  BarChart3,
 } from 'lucide-react';
 import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
+  GlassCard,
+  GlassCardHeader,
+  GlassCardTitle,
+  GlassCardDescription,
+  GlassCardContent,
   Badge,
 } from '../components/ui';
+import dashboardData from '../data/dashboard.json';
 
-const stats = [
-  {
-    title: 'Total Rows',
-    value: '3,425',
-    change: '-1.1%',
-    trend: 'down',
-    icon: Database,
-  },
-  {
-    title: 'Queries',
-    value: '109',
-    change: '-19.8%',
-    trend: 'down',
-    icon: Activity,
-  },
-  {
-    title: 'Active Connections',
-    value: '7',
-    change: '-15.4%',
-    trend: 'down',
-    icon: Zap,
-  },
-  {
-    title: 'Active Users',
-    value: '6',
-    change: '-83.7%',
-    trend: 'down',
-    icon: Users,
-  },
-];
+const iconMap: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
+  Database,
+  Activity,
+  Zap,
+  Users,
+};
 
-const recentQueries = [
-  { name: 'GET', queries: 36, success: 91.1, status: 'success' },
-  { name: 'PATCH', queries: 34, success: 70.6, status: 'warning' },
-  { name: 'POST', queries: 28, success: 71.4, status: 'warning' },
-  { name: 'DELETE', queries: 4, success: 100, status: 'success' },
-];
-
-const activeConnections = [
-  { name: 'SalesforceDev', queries: 3, status: 'success' },
-  { name: 'SalesforceProd', queries: 1, status: 'success' },
-];
+const stats = dashboardData.stats.map((stat) => ({
+  ...stat,
+  icon: iconMap[stat.icon] || Database,
+}));
 
 export const Dashboard: React.FC = () => {
+  const [selectedPeriod, setSelectedPeriod] = useState('7 Days');
+  const periods = ['1 Day', '7 Days', '30 Days'];
+
   return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div>
-        <h1 className="text-3xl font-bold text-dark-900 mb-2">Dashboard</h1>
-        <p className="text-dark-600">Monitor your data connections and query performance</p>
-      </div>
-
-      {/* Time Filter */}
-      <div className="flex items-center gap-2">
-        <span className="text-sm text-dark-600">Show data for the past:</span>
-        <div className="flex gap-2">
-          {['1 Day', '7 Days', '30 Days'].map((period, idx) => (
-            <button
-              key={period}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                idx === 1
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-dark-100 text-dark-700 hover:bg-dark-200'
-              }`}
-            >
-              {period}
-            </button>
-          ))}
+    <div className="min-h-screen bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Header */}
+        <div className="mb-12 animate-fade-in">
+          <h1 className="text-5xl font-bold mb-3">
+            <span className="text-gradient">Dashboard</span>
+          </h1>
+          <p className="text-xl text-primary-300">
+            Monitor your data connections and query performance in real-time
+          </p>
         </div>
-      </div>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((stat) => {
-          const Icon = stat.icon;
-          const TrendIcon = stat.trend === 'up' ? TrendingUp : TrendingDown;
-          
-          return (
-            <Card key={stat.title}>
-              <CardContent className="pt-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="p-2 bg-primary-600/10 rounded-lg">
-                    <Icon className="w-5 h-5 text-primary-500" />
-                  </div>
-                  <div className={`flex items-center gap-1 text-sm font-medium ${
-                    stat.trend === 'up' ? 'text-green-500' : 'text-red-500'
-                  }`}>
-                    <TrendIcon className="w-4 h-4" />
-                    {stat.change}
-                  </div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-dark-900 mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-dark-600">{stat.title}</div>
-                  <div className="text-xs text-dark-500 mt-1">this week</div>
-                </div>
-              </CardContent>
-            </Card>
-          );
-        })}
-      </div>
-
-      {/* Charts Section */}
-      <div className="grid lg:grid-cols-2 gap-6">
-        {/* Recent Queries */}
-        <Card>
-          <CardHeader>
-            <div className="flex items-center justify-between">
-              <div>
-                <CardTitle>Recent Queries</CardTitle>
-                <CardDescription>Query performance by method</CardDescription>
-              </div>
-              <Badge variant="info">7 Days</Badge>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {recentQueries.map((query) => (
-                <div key={query.name} className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <span className="font-mono font-semibold text-dark-900">
-                        {query.name}
-                      </span>
-                      <span className="text-sm text-dark-600">
-                        {query.queries} queries
-                      </span>
-                    </div>
-                    <span className={`text-sm font-medium ${
-                      query.success > 90 ? 'text-green-500' : 'text-yellow-500'
-                    }`}>
-                      {query.success}%
-                    </span>
-                  </div>
-                  <div className="h-2 bg-dark-100 rounded-full overflow-hidden">
-                    <div
-                      className={`h-full rounded-full ${
-                        query.success > 90 ? 'bg-green-500' : 'bg-yellow-500'
-                      }`}
-                      style={{ width: `${query.success}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Active Connections */}
-        <Card>
-          <CardHeader>
-            <div className="flex items-center justify-between">
-              <div>
-                <CardTitle>Active Connections</CardTitle>
-                <CardDescription>Currently connected data sources</CardDescription>
-              </div>
-              <Badge variant="success">{activeConnections.length} Active</Badge>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {activeConnections.map((connection) => (
-                <div
-                  key={connection.name}
-                  className="flex items-center justify-between p-4 bg-dark-100 rounded-lg border border-dark-200"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary-600/10 rounded-lg flex items-center justify-center">
-                      <Database className="w-5 h-5 text-primary-500" />
-                    </div>
-                    <div>
-                      <div className="font-medium text-dark-900">
-                        {connection.name}
-                      </div>
-                      <div className="text-sm text-dark-600">
-                        {connection.queries} queries
-                      </div>
-                    </div>
-                  </div>
-                  <Badge variant="success">
-                    {connection.status === 'success' ? 'Connected' : 'Offline'}
-                  </Badge>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Activity Timeline */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Recent Activity</CardTitle>
-          <CardDescription>Latest events and updates</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {[
-              { time: '2 minutes ago', action: 'New query executed on SalesforceDev', type: 'query' },
-              { time: '15 minutes ago', action: 'Connection established with SalesforceProd', type: 'connection' },
-              { time: '1 hour ago', action: 'User John Doe logged in via SSO', type: 'auth' },
-              { time: '3 hours ago', action: 'Data sync completed for MySQL database', type: 'sync' },
-            ].map((activity, idx) => (
-              <div key={idx} className="flex items-start gap-4">
-                <div className="w-2 h-2 mt-2 rounded-full bg-primary-500"></div>
-                <div className="flex-1">
-                  <div className="text-sm text-dark-900">{activity.action}</div>
-                  <div className="text-xs text-dark-600 mt-1">{activity.time}</div>
-                </div>
-              </div>
+        {/* Time Filter */}
+        <div className="flex items-center gap-4 mb-12 animate-slide-up">
+          <span className="text-sm font-semibold text-white">Time Period:</span>
+          <div className="flex gap-2">
+            {periods.map((period) => (
+              <button
+                key={period}
+                onClick={() => setSelectedPeriod(period)}
+                className={`px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                  selectedPeriod === period
+                    ? 'bg-white text-black shadow-lg transform scale-105'
+                    : 'glass hover:shadow-glass-lg text-white'
+                }`}
+              >
+                {period}
+              </button>
             ))}
           </div>
-        </CardContent>
-      </Card>
+        </div>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 animate-slide-up">
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            const TrendIcon = stat.trend === 'up' ? TrendingUp : TrendingDown;
+            const isPositive = stat.trend === 'up';
+            
+            return (
+              <GlassCard key={stat.title} hover style={{ animationDelay: `${index * 100}ms` }}>
+                <GlassCardContent className="pt-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-lg">
+                      <Icon className="w-7 h-7 text-black" strokeWidth={2.5} />
+                    </div>
+                    <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${
+                      isPositive ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
+                    }`}>
+                      <TrendIcon className="w-3.5 h-3.5" strokeWidth={3} />
+                      {stat.change}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-4xl font-bold text-white mb-2">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm font-semibold text-primary-300">{stat.title}</div>
+                    <div className="text-xs text-primary-400 mt-1">this week</div>
+                  </div>
+                </GlassCardContent>
+              </GlassCard>
+            );
+          })}
+        </div>
+
+        {/* Charts Section */}
+        <div className="grid lg:grid-cols-2 gap-6 mb-12">
+          {/* Recent Queries */}
+          <GlassCard hover>
+            <GlassCardHeader>
+              <div className="flex items-center justify-between">
+                <div>
+                  <GlassCardTitle>Query Performance</GlassCardTitle>
+                  <GlassCardDescription>Performance breakdown by HTTP method</GlassCardDescription>
+                </div>
+                <Badge variant="info" className="shadow-lg">
+                  <BarChart3 className="w-3 h-3 mr-1" strokeWidth={3} />
+                  {selectedPeriod}
+                </Badge>
+              </div>
+            </GlassCardHeader>
+            <GlassCardContent>
+              <div className="space-y-5">
+                {dashboardData.recentQueries.map((query, index) => (
+                  <div key={query.name} className="space-y-3 group" style={{ animationDelay: `${index * 100}ms` }}>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <span className="font-mono font-bold text-white text-sm px-3 py-1.5 bg-white/10 rounded-lg">
+                          {query.name}
+                        </span>
+                        <span className="text-sm font-semibold text-primary-300">
+                          {query.queries} queries
+                        </span>
+                      </div>
+                      <span className={`text-sm font-bold px-3 py-1 rounded-lg ${
+                        query.success > 90 
+                          ? 'bg-green-500/20 text-green-400' 
+                          : 'bg-amber-500/20 text-amber-400'
+                      }`}>
+                        {query.success}%
+                      </span>
+                    </div>
+                    <div className="h-3 bg-white/10 rounded-full overflow-hidden">
+                      <div
+                        className={`h-full rounded-full transition-all duration-500 ${
+                          query.success > 90 
+                            ? 'bg-gradient-to-r from-green-500 to-green-600' 
+                            : 'bg-gradient-to-r from-amber-500 to-amber-600'
+                        }`}
+                        style={{ width: `${query.success}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </GlassCardContent>
+          </GlassCard>
+
+          {/* Active Connections */}
+          <GlassCard hover>
+            <GlassCardHeader>
+              <div className="flex items-center justify-between">
+                <div>
+                  <GlassCardTitle>Active Connections</GlassCardTitle>
+                  <GlassCardDescription>Currently connected data sources</GlassCardDescription>
+                </div>
+                <Badge variant="success" className="shadow-lg">
+                  <CheckCircle2 className="w-3 h-3 mr-1" strokeWidth={3} />
+                  {dashboardData.activeConnections.length} Active
+                </Badge>
+              </div>
+            </GlassCardHeader>
+            <GlassCardContent>
+              <div className="space-y-4">
+                {dashboardData.activeConnections.map((connection, index) => (
+                  <div
+                    key={connection.name}
+                    className="flex items-center justify-between p-4 glass-hover rounded-2xl border border-white/10 group"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                        <Database className="w-6 h-6 text-black" strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <div className="font-bold text-white mb-1">
+                          {connection.name}
+                        </div>
+                        <div className="text-xs font-semibold text-primary-400">
+                          {connection.queries} queries
+                        </div>
+                      </div>
+                    </div>
+                    <Badge variant="success">
+                      <CheckCircle2 className="w-3 h-3 mr-1" strokeWidth={3} />
+                      Connected
+                    </Badge>
+                  </div>
+                ))}
+              </div>
+            </GlassCardContent>
+          </GlassCard>
+        </div>
+
+        {/* Activity Timeline */}
+        <GlassCard hover>
+          <GlassCardHeader>
+            <div className="flex items-center justify-between">
+              <div>
+                <GlassCardTitle>Recent Activity</GlassCardTitle>
+                <GlassCardDescription>Latest events and system updates</GlassCardDescription>
+              </div>
+              <Clock className="w-6 h-6 text-primary-400" strokeWidth={2.5} />
+            </div>
+          </GlassCardHeader>
+          <GlassCardContent>
+            <div className="space-y-6">
+              {dashboardData.recentActivity.map((activity, index) => (
+                <div key={index} className="flex items-start gap-5 group" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="relative">
+                    <div className="w-3 h-3 rounded-full bg-white group-hover:scale-125 transition-transform" />
+                    {index < dashboardData.recentActivity.length - 1 && (
+                      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-0.5 h-6 bg-white/20" />
+                    )}
+                  </div>
+                  <div className="flex-1 pb-2">
+                    <div className="text-sm font-semibold text-white mb-1">{activity.action}</div>
+                    <div className="flex items-center gap-2 text-xs font-medium text-primary-400">
+                      <Clock className="w-3 h-3" strokeWidth={2.5} />
+                      {activity.time}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </GlassCardContent>
+        </GlassCard>
+      </div>
     </div>
   );
 };
 
 export default Dashboard;
-

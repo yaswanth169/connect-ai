@@ -17,27 +17,27 @@ export const Input: React.FC<InputProps> = ({
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-medium text-dark-700 mb-2">
+        <label className="block text-sm font-semibold text-white mb-2">
           {label}
         </label>
       )}
-      <div className="relative">
+      <div className="relative group">
         {Icon && (
-          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-dark-500">
-            <Icon className="w-5 h-5" />
+          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary-400 group-focus-within:text-white transition-colors">
+            <Icon className="w-5 h-5" strokeWidth={2.5} />
           </div>
         )}
         <input
-          className={`w-full bg-dark-100 border border-dark-200 rounded-lg px-4 py-2.5 ${
-            Icon ? 'pl-10' : ''
-          } text-dark-900 placeholder:text-dark-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all duration-200 ${
-            error ? 'border-red-500 focus:ring-red-500' : ''
+          className={`w-full glass rounded-xl px-4 py-3.5 ${
+            Icon ? 'pl-12' : ''
+          } text-white placeholder:text-primary-400 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all duration-300 ${
+            error ? 'border-red-500/50 focus:ring-red-500/20' : ''
           } ${className}`}
           {...props}
         />
       </div>
       {error && (
-        <p className="mt-1 text-sm text-red-500">{error}</p>
+        <p className="mt-2 text-sm text-red-400 font-medium">{error}</p>
       )}
     </div>
   );

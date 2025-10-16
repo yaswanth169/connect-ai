@@ -44,8 +44,14 @@ connect-ai/
 │   │   ├── Dashboard.tsx
 │   │   ├── Integrations.tsx
 │   │   ├── Sources.tsx
+│   │   ├── SourceDetail.tsx
 │   │   ├── NotFound.tsx
 │   │   └── index.ts
+│   ├── data/                # JSON data files (mock data)
+│   │   ├── sources.json     # Data sources configuration
+│   │   ├── integrations.json # Integration platforms
+│   │   ├── dashboard.json   # Dashboard statistics
+│   │   └── README.md        # Data folder documentation
 │   ├── App.tsx              # Main app component with routing
 │   ├── main.tsx             # Application entry point
 │   └── index.css            # Global styles with Tailwind
@@ -107,11 +113,19 @@ npm run preview
 - Call-to-action sections
 
 ### Dashboard
-- Real-time metrics and statistics
+- Real-time metrics and statistics (powered by JSON data)
 - Query performance monitoring
 - Active connections overview
 - Recent activity timeline
 - Trend indicators
+
+### Data Sources
+- **List View**: Browse all 10+ data sources with summary stats
+- **Detail View**: Click any source to view comprehensive details
+- Connection information (host, port, database)
+- Performance metrics (uptime, rows, tables, size)
+- Connect/Disconnect functionality
+- Visual status indicators
 
 ### Integrations
 - 270+ pre-built connectors
@@ -126,6 +140,12 @@ npm run preview
 - SSO login/logout functionality
 - User profile display
 - Responsive mobile menu
+
+### Data Management
+- **Centralized JSON Data**: All mock data stored in `/src/data/` folder
+- **Easy API Migration**: Structure ready for API integration
+- **Type-Safe**: Full TypeScript support
+- **Well Documented**: Comprehensive data structure documentation
 
 ## Component Library
 

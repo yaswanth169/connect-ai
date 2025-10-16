@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Bell, Settings } from 'lucide-react';
+import { Menu, Bell, Settings, Search } from 'lucide-react';
 import { Button } from '../ui';
 
 interface HeaderProps {
@@ -8,28 +8,37 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   return (
-    <header className="sticky top-0 z-30 bg-dark-100/80 backdrop-blur-md border-b border-dark-200">
-      <div className="flex items-center justify-between px-4 py-3">
+    <header className="sticky top-0 z-30 glass-dark border-b border-white/10">
+      <div className="flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-4">
           <button
             onClick={onMenuClick}
-            className="lg:hidden text-dark-700 hover:text-dark-900 transition-colors"
+            className="lg:hidden w-10 h-10 rounded-xl glass-hover flex items-center justify-center text-white border border-white/10"
           >
-            <Menu className="w-6 h-6" />
+            <Menu className="w-5 h-5" strokeWidth={2.5} />
           </button>
-          <div className="hidden sm:block">
-            <h1 className="text-xl font-semibold text-dark-900">Connect Data to AI</h1>
-            <p className="text-sm text-dark-600">Seamlessly integrate your business data</p>
+          
+          {/* Search Bar */}
+          <div className="hidden md:flex items-center gap-3 px-4 py-2.5 rounded-xl glass-hover border border-white/10 min-w-[320px]">
+            <Search className="w-5 h-5 text-primary-400" strokeWidth={2.5} />
+            <input
+              type="text"
+              placeholder="Search anything..."
+              className="flex-1 bg-transparent border-none outline-none text-sm font-medium text-white placeholder:text-primary-400"
+            />
+            <kbd className="px-2 py-1 text-xs font-semibold text-white bg-white/10 rounded">
+              ⌘K
+            </kbd>
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <Button variant="ghost" size="sm" className="relative">
-            <Bell className="w-5 h-5" />
-            <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+            <Bell className="w-5 h-5" strokeWidth={2.5} />
+            <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full border-2 border-black"></span>
           </Button>
           <Button variant="ghost" size="sm">
-            <Settings className="w-5 h-5" />
+            <Settings className="w-5 h-5" strokeWidth={2.5} />
           </Button>
         </div>
       </div>
@@ -38,4 +47,3 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
 };
 
 export default Header;
-

@@ -12,16 +12,16 @@ export const Badge: React.FC<BadgeProps> = ({
   className = '',
 }) => {
   const variants = {
-    default: 'bg-dark-200 text-dark-800',
-    success: 'bg-green-600/20 text-green-400 border border-green-600/30',
-    warning: 'bg-yellow-600/20 text-yellow-400 border border-yellow-600/30',
-    danger: 'bg-red-600/20 text-red-400 border border-red-600/30',
-    info: 'bg-primary-600/20 text-primary-400 border border-primary-600/30',
+    default: 'bg-white/10 text-white border border-white/20',
+    success: 'bg-green-500/20 text-green-400 border border-green-500/40',
+    warning: 'bg-amber-500/20 text-amber-400 border border-amber-500/40',
+    danger: 'bg-red-500/20 text-red-400 border border-red-500/40',
+    info: 'bg-blue-500/20 text-blue-400 border border-blue-500/40',
   };
 
   return (
     <span
-      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${variants[variant]} ${className}`}
+      className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm ${variants[variant]} ${className}`}
     >
       {children}
     </span>
