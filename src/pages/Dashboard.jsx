@@ -65,10 +65,10 @@ export const Dashboard = () => {
         {/* Header */}
         <div className="mb-12 animate-fade-in">
           <h1 className="text-5xl font-bold mb-3">
-            <span className="text-gradient">Dashboard</span>
+            <span className="text-gradient">MCP Dashboard</span>
           </h1>
           <p className="text-xl text-primary-300">
-            Monitor your data connections and query performance in real-time
+            Monitor your AWS Bedrock connections and MCP performance in real-time
           </p>
         </div>
 
@@ -133,8 +133,8 @@ export const Dashboard = () => {
             <GlassCardHeader>
               <div className="flex items-center justify-between">
                 <div>
-                  <GlassCardTitle>MCP Performance</GlassCardTitle>
-                  <GlassCardDescription>AI model request success rates</GlassCardDescription>
+                  <GlassCardTitle>AWS Bedrock Performance</GlassCardTitle>
+                  <GlassCardDescription>Foundation model request success rates</GlassCardDescription>
                 </div>
                 <Badge variant="info" className="shadow-lg">
                   <BarChart3 className="w-3 h-3 mr-1" strokeWidth={3} />

@@ -95,7 +95,7 @@ export const ChatBot = () => {
               <FiMessageCircle className="w-5 h-5 text-white" strokeWidth={2.5} />
             </div>
             <div>
-              <h3 className="text-black font-bold">ConnectAI Assistant</h3>
+              <h3 className="text-black font-bold">BPAZ MCP Assistant</h3>
               <p className="text-xs text-gray-600">Always here to help</p>
             </div>
           </div>

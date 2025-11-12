@@ -171,9 +171,9 @@ console.log(result);`;
                     <div>
                       <h3 className="text-2xl font-bold text-white mb-4">About {model.name}</h3>
                       <p className="text-primary-300 leading-relaxed mb-6">
-                        {model.name} is a powerful AI model provided by {model.provider}. It offers {model.contextWindow} context window 
-                        and is priced at {model.pricing}. This model is ideal for a wide range of use cases including natural language 
-                        processing, code generation, and intelligent automation.
+                        {model.name} is a powerful foundation model available through {model.provider}. It offers {model.contextWindow} context window 
+                        with {model.pricing} pricing. This model is ideal for enterprise use cases including natural language 
+                        processing, code generation, and intelligent automation within the Barclays environment.
                       </p>
                     </div>
 
@@ -194,7 +194,7 @@ console.log(result);`;
                         </li>
                         <li className="flex items-start gap-3">
                           <FiZap className="w-5 h-5 text-green-500 mt-1" />
-                          <span>Easy integration with MCP protocol</span>
+                          <span>Easy integration with MCP protocol on AWS Bedrock</span>
                         </li>
                       </ul>
                     </div>
@@ -333,10 +333,10 @@ MODEL=${model.id}`}
               <FiZap className="w-12 h-12 text-white" />
             </div>
             <h2 className="text-5xl font-bold text-white mb-6">
-              Connect to MCP Server
+              Connect to AWS Bedrock MCP Server
             </h2>
             <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Ready to integrate {model.name} with your workflow? Click below to connect to your MCP server endpoint.
+              Ready to integrate {model.name} with your Barclays workflow? Click below to connect to your AWS Bedrock MCP server endpoint.
             </p>
             <Button
               size="lg"

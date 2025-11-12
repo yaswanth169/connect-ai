@@ -1,26 +1,28 @@
 {
   "greetings": [
-    "Hello! I'm your ConnectAI assistant. How can I help you today?",
-    "Hi there! Need help with MCP integration?",
-    "Welcome! Ask me anything about ConnectAI."
+    "Hello! I'm your BPAZ MCP assistant. How can I help you today?",
+    "Hi there! Need help with MCP integration on AWS Bedrock?",
+    "Welcome to BPAZ MCP! Ask me anything about connecting your tools to AI."
   ],
   "responses": {
-    "mcp": "MCP (Model Context Protocol) is a standardized way to connect AI models with external tools and data sources. It allows seamless integration between LLMs and your business tools.",
-    "how to connect": "To connect via MCP: 1) Choose your tool from Sources, 2) Select an AI model from Integrations, 3) Follow the documentation, 4) Add your MCP endpoint URL. It's that simple!",
-    "pricing": "ConnectAI offers flexible pricing plans. Contact our sales team for enterprise pricing or start with our free tier to test integrations.",
-    "support": "Need help? You can reach our support team at support@connectai.com or use the feedback form in the sidebar.",
-    "integrations": "We support 270+ integrations including Jira, Slack, GitHub, Notion, and all major AI models like GPT-4, Claude, Gemini, and more!",
-    "tools": "Our platform includes tools for project management (Jira, Asana), communication (Slack), documentation (Confluence, Notion), and version control (GitHub).",
-    "ai models": "We support GPT-4, Claude 3, Llama 3, Gemini Pro, Mistral, Grok, and custom models. Connect any LLM to your business tools via MCP.",
-    "getting started": "Getting started is easy! 1) Browse available sources, 2) Select tools you need, 3) Choose an AI model, 4) Follow our setup guide, 5) Start automating!",
-    "documentation": "Check out our comprehensive documentation in the API section for detailed integration guides, code examples, and best practices.",
-    "security": "We take security seriously. All connections are encrypted, we support SSO, and follow SOC 2 compliance standards."
+    "mcp": "MCP (Model Context Protocol) is a standardized way to connect AI models with external tools and data sources. BPAZ MCP allows seamless integration between AWS Bedrock models and your enterprise tools.",
+    "how to connect": "To connect via MCP: 1) Choose your tool from Sources (Jira, Confluence, GitLab, etc.), 2) Select an AWS Bedrock model from Integrations, 3) Follow the documentation, 4) Add your MCP endpoint URL. It's that simple!",
+    "pricing": "BPAZ MCP uses AWS Bedrock's pay-per-use pricing model. No upfront costs - you only pay for what you use. Contact your Barclays account team for details.",
+    "support": "Need help? You can reach the BPAZ support team through your internal Barclays support channels or use the feedback form in the sidebar.",
+    "integrations": "We support enterprise tools including Jira, Confluence, GitLab, AWS CloudWatch, Grafana, Prometheus, Power BI, and AWS S3. All models are from AWS Bedrock including Claude 3.5 Sonnet, Claude 3 Opus, Amazon Titan, Llama 3, and more!",
+    "tools": "Our platform includes tools for project management (Jira), documentation (Confluence), version control (GitLab), monitoring (Grafana, Prometheus, CloudWatch), analytics (Power BI), and cloud storage (AWS S3).",
+    "ai models": "We support AWS Bedrock models including Claude 3.5 Sonnet, Claude 3 Opus/Sonnet/Haiku, Amazon Titan (Text & Embeddings), Llama 3, Mistral, Mixtral, Cohere Command R/R+, and Amazon Nova. All models run securely within AWS infrastructure.",
+    "bedrock": "AWS Bedrock is Amazon's fully managed service for foundation models. It provides secure access to models from Anthropic, Meta, Mistral, Cohere, and Amazon with enterprise-grade security and compliance.",
+    "getting started": "Getting started is easy! 1) Browse available enterprise tools in Sources, 2) Select tools you need, 3) Choose an AWS Bedrock model, 4) Follow our setup guide, 5) Start automating your workflows with AI!",
+    "documentation": "Check out our comprehensive documentation in the API section for detailed integration guides, code examples, and best practices for using AWS Bedrock models.",
+    "security": "BPAZ MCP runs on AWS infrastructure with bank-grade security. All connections are encrypted, we support SSO, and follow Barclays security standards and AWS compliance frameworks.",
+    "barclays": "BPAZ MCP is designed specifically for Barclays enterprise environment, ensuring compliance with internal security policies and seamless integration with your existing tools and workflows.",
+    "aws": "All AI models run on AWS Bedrock within your AWS environment, ensuring data never leaves your secure cloud infrastructure. Full compliance with AWS security best practices."
   },
   "fallback": [
     "I'm here to help! Could you please rephrase your question?",
-    "I'm not sure I understand. Try asking about MCP, integrations, or getting started!",
-    "Hmm, I don't have an answer for that yet. Would you like to speak with our support team?",
-    "That's a great question! For detailed answers, check our documentation or contact support."
+    "I'm not sure I understand. Try asking about MCP, AWS Bedrock, integrations, or getting started!",
+    "Hmm, I don't have an answer for that yet. Would you like to speak with the BPAZ support team?",
+    "That's a great question! For detailed answers, check our documentation or contact Barclays support."
   ]
 }
-

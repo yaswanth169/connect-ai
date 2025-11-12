@@ -79,9 +79,9 @@ export const Sidebar = ({ isOpen, onClose }) => {
               </div>
               <div>
                 <span className="text-2xl font-bold text-white block leading-tight">
-                  ConnectAI
+                  BPAZ MCP
                 </span>
-                <span className="text-xs text-primary-300 font-medium">Enterprise Platform</span>
+                <span className="text-xs text-primary-300 font-medium">Barclays Platform</span>
               </div>
             </Link>
             <button

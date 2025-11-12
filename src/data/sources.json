@@ -4,7 +4,7 @@
     "name": "Jira",
     "type": "Project Management",
     "status": "available",
-    "description": "Project tracking and agile project management tool",
+    "description": "Agile project tracking and issue management platform",
     "provider": "Atlassian",
     "category": "Productivity",
     "toolsCount": 12,
@@ -40,6 +40,36 @@
         "id": "create-sprint",
         "name": "Create Sprint",
         "description": "Create and manage sprints"
+      },
+      {
+        "id": "get-issue",
+        "name": "Get Issue",
+        "description": "Retrieve issue details"
+      },
+      {
+        "id": "search-issues",
+        "name": "Search Issues",
+        "description": "Search for issues using JQL"
+      },
+      {
+        "id": "transition-issue",
+        "name": "Transition Issue",
+        "description": "Move issue through workflow"
+      },
+      {
+        "id": "add-attachment",
+        "name": "Add Attachment",
+        "description": "Attach files to issues"
+      },
+      {
+        "id": "create-subtask",
+        "name": "Create Subtask",
+        "description": "Create subtask for existing issue"
+      },
+      {
+        "id": "update-field",
+        "name": "Update Field",
+        "description": "Update custom or standard fields"
       }
     ]
   },
@@ -48,10 +78,10 @@
     "name": "Confluence",
     "type": "Documentation",
     "status": "available",
-    "description": "Team collaboration and documentation platform",
+    "description": "Team collaboration and knowledge management platform",
     "provider": "Atlassian",
-    "category": "Productivity",
-    "toolsCount": 8,
+    "category": "Documentation",
+    "toolsCount": 10,
     "icon": "FiFileText",
     "popular": true,
     "tools": [
@@ -74,185 +104,415 @@
         "id": "create-space",
         "name": "Create Space",
         "description": "Create a new workspace"
+      },
+      {
+        "id": "get-page",
+        "name": "Get Page",
+        "description": "Retrieve page content"
+      },
+      {
+        "id": "add-comment",
+        "name": "Add Comment",
+        "description": "Comment on pages"
+      },
+      {
+        "id": "attach-file",
+        "name": "Attach File",
+        "description": "Attach files to pages"
+      },
+      {
+        "id": "create-blog",
+        "name": "Create Blog Post",
+        "description": "Create blog post in space"
+      },
+      {
+        "id": "list-pages",
+        "name": "List Pages",
+        "description": "List all pages in space"
+      },
+      {
+        "id": "archive-page",
+        "name": "Archive Page",
+        "description": "Archive outdated pages"
       }
     ]
   },
   {
-    "id": "slack",
-    "name": "Slack",
-    "type": "Communication",
-    "status": "available",
-    "description": "Team communication and collaboration platform",
-    "provider": "Salesforce",
-    "category": "Communication",
-    "toolsCount": 15,
-    "icon": "FiMessageSquare",
-    "popular": true,
-    "tools": [
-      {
-        "id": "send-message",
-        "name": "Send Message",
-        "description": "Send messages to channels or users"
-      },
-      {
-        "id": "create-channel",
-        "name": "Create Channel",
-        "description": "Create new channels"
-      },
-      {
-        "id": "upload-file",
-        "name": "Upload File",
-        "description": "Share files with team"
-      },
-      {
-        "id": "schedule-message",
-        "name": "Schedule Message",
-        "description": "Schedule messages for later"
-      }
-    ]
-  },
-  {
-    "id": "github",
-    "name": "GitHub",
+    "id": "gitlab",
+    "name": "GitLab",
     "type": "Version Control",
     "status": "available",
-    "description": "Code hosting and version control platform",
-    "provider": "Microsoft",
+    "description": "DevOps platform for source code management and CI/CD",
+    "provider": "GitLab",
     "category": "Development",
-    "toolsCount": 20,
+    "toolsCount": 14,
     "icon": "FiGithub",
     "popular": true,
     "tools": [
       {
-        "id": "create-repo",
-        "name": "Create Repository",
-        "description": "Create new Git repositories"
-      },
-      {
-        "id": "create-pr",
-        "name": "Create Pull Request",
-        "description": "Open pull requests for review"
-      },
-      {
-        "id": "create-issue",
-        "name": "Create Issue",
-        "description": "Report bugs and track work"
+        "id": "create-merge-request",
+        "name": "Create Merge Request",
+        "description": "Create new merge request"
       },
       {
         "id": "review-code",
         "name": "Review Code",
         "description": "Review and comment on code"
-      }
-    ]
-  },
-  {
-    "id": "notion",
-    "name": "Notion",
-    "type": "Workspace",
-    "status": "available",
-    "description": "All-in-one workspace for notes, docs, and projects",
-    "provider": "Notion Labs",
-    "category": "Productivity",
-    "toolsCount": 10,
-    "icon": "FiBook",
-    "popular": false,
-    "tools": [
-      {
-        "id": "create-page",
-        "name": "Create Page",
-        "description": "Create new pages and documents"
       },
-      {
-        "id": "create-database",
-        "name": "Create Database",
-        "description": "Create structured databases"
-      },
-      {
-        "id": "query-database",
-        "name": "Query Database",
-        "description": "Search and filter database entries"
-      }
-    ]
-  },
-  {
-    "id": "trello",
-    "name": "Trello",
-    "type": "Project Management",
-    "status": "available",
-    "description": "Visual project management with boards and cards",
-    "provider": "Atlassian",
-    "category": "Productivity",
-    "toolsCount": 9,
-    "icon": "FiTrello",
-    "popular": false,
-    "tools": [
-      {
-        "id": "create-board",
-        "name": "Create Board",
-        "description": "Create new project boards"
-      },
-      {
-        "id": "create-card",
-        "name": "Create Card",
-        "description": "Add new cards to lists"
-      },
-      {
-        "id": "move-card",
-        "name": "Move Card",
-        "description": "Move cards between lists"
-      }
-    ]
-  },
-  {
-    "id": "asana",
-    "name": "Asana",
-    "type": "Project Management",
-    "status": "available",
-    "description": "Work management platform for teams",
-    "provider": "Asana Inc.",
-    "category": "Productivity",
-    "toolsCount": 11,
-    "icon": "FiCheckCircle",
-    "popular": false,
-    "tools": [
-      {
-        "id": "create-task",
-        "name": "Create Task",
-        "description": "Create new tasks"
-      },
-      {
-        "id": "assign-task",
-        "name": "Assign Task",
-        "description": "Assign tasks to team members"
-      },
-      {
-        "id": "create-project",
-        "name": "Create Project",
-        "description": "Start new projects"
-      }
-    ]
-  },
-  {
-    "id": "linear",
-    "name": "Linear",
-    "type": "Issue Tracking",
-    "status": "available",
-    "description": "Modern issue tracking for software teams",
-    "provider": "Linear",
-    "category": "Development",
-    "toolsCount": 8,
-    "icon": "FiTarget",
-    "popular": false,
-    "tools": [
       {
         "id": "create-issue",
         "name": "Create Issue",
-        "description": "Create and track issues"
+        "description": "Create new issue"
       },
       {
-        "id": "update-status",
-        "name": "Update Status",
-        "description": "Update issue status"
+        "id": "trigger-pipeline",
+        "name": "Trigger Pipeline",
+        "description": "Start CI/CD pipeline"
+      },
+      {
+        "id": "list-projects",
+        "name": "List Projects",
+        "description": "Get all accessible projects"
+      },
+      {
+        "id": "get-commit",
+        "name": "Get Commit",
+        "description": "Retrieve commit details"
+      },
+      {
+        "id": "create-branch",
+        "name": "Create Branch",
+        "description": "Create new branch"
+      },
+      {
+        "id": "merge-request",
+        "name": "Merge Request",
+        "description": "Merge approved changes"
+      },
+      {
+        "id": "add-label",
+        "name": "Add Label",
+        "description": "Add labels to issues/MRs"
+      },
+      {
+        "id": "create-tag",
+        "name": "Create Tag",
+        "description": "Create version tag"
+      },
+      {
+        "id": "get-pipeline",
+        "name": "Get Pipeline",
+        "description": "Get pipeline status"
+      },
+      {
+        "id": "create-wiki",
+        "name": "Create Wiki Page",
+        "description": "Create project wiki page"
+      },
+      {
+        "id": "list-branches",
+        "name": "List Branches",
+        "description": "List all branches"
+      },
+      {
+        "id": "create-milestone",
+        "name": "Create Milestone",
+        "description": "Create project milestone"
+      }
+    ]
+  },
+  {
+    "id": "aws-cloudwatch",
+    "name": "AWS CloudWatch",
+    "type": "Monitoring",
+    "status": "available",
+    "description": "AWS monitoring and observability service",
+    "provider": "AWS",
+    "category": "Cloud",
+    "toolsCount": 9,
+    "icon": "FiCloud",
+    "popular": true,
+    "tools": [
+      {
+        "id": "get-metrics",
+        "name": "Get Metrics",
+        "description": "Retrieve CloudWatch metrics"
+      },
+      {
+        "id": "create-alarm",
+        "name": "Create Alarm",
+        "description": "Create CloudWatch alarm"
+      },
+      {
+        "id": "get-logs",
+        "name": "Get Logs",
+        "description": "Query CloudWatch Logs"
+      },
+      {
+        "id": "put-metric",
+        "name": "Put Metric",
+        "description": "Publish custom metric"
+      },
+      {
+        "id": "list-alarms",
+        "name": "List Alarms",
+        "description": "List all CloudWatch alarms"
+      },
+      {
+        "id": "describe-alarm",
+        "name": "Describe Alarm",
+        "description": "Get alarm details"
+      },
+      {
+        "id": "create-dashboard",
+        "name": "Create Dashboard",
+        "description": "Create monitoring dashboard"
+      },
+      {
+        "id": "get-log-events",
+        "name": "Get Log Events",
+        "description": "Retrieve log events"
+      },
+      {
+        "id": "filter-logs",
+        "name": "Filter Logs",
+        "description": "Filter log streams"
+      }
+    ]
+  },
+  {
+    "id": "grafana",
+    "name": "Grafana",
+    "type": "Observability",
+    "status": "available",
+    "description": "Analytics and interactive visualization platform",
+    "provider": "Grafana Labs",
+    "category": "Monitoring",
+    "toolsCount": 8,
+    "icon": "FiActivity",
+    "popular": true,
+    "tools": [
+      {
+        "id": "create-dashboard",
+        "name": "Create Dashboard",
+        "description": "Create new dashboard"
+      },
+      {
+        "id": "add-panel",
+        "name": "Add Panel",
+        "description": "Add visualization panel"
+      },
+      {
+        "id": "query-data",
+        "name": "Query Data",
+        "description": "Query data sources"
+      },
+      {
+        "id": "create-alert",
+        "name": "Create Alert",
+        "description": "Create alert rule"
+      },
+      {
+        "id": "export-dashboard",
+        "name": "Export Dashboard",
+        "description": "Export dashboard JSON"
+      },
+      {
+        "id": "create-folder",
+        "name": "Create Folder",
+        "description": "Organize dashboards"
+      },
+      {
+        "id": "manage-datasource",
+        "name": "Manage Datasource",
+        "description": "Configure data sources"
+      },
+      {
+        "id": "create-snapshot",
+        "name": "Create Snapshot",
+        "description": "Create dashboard snapshot"
+      }
+    ]
+  },
+  {
+    "id": "prometheus",
+    "name": "Prometheus",
+    "type": "Metrics & Monitoring",
+    "status": "available",
+    "description": "Open-source monitoring and alerting toolkit",
+    "provider": "CNCF",
+    "category": "Monitoring",
+    "toolsCount": 7,
+    "icon": "FiTrendingUp",
+    "popular": true,
+    "tools": [
+      {
+        "id": "query-metrics",
+        "name": "Query Metrics",
+        "description": "Execute PromQL queries"
+      },
+      {
+        "id": "get-targets",
+        "name": "Get Targets",
+        "description": "List scrape targets"
+      },
+      {
+        "id": "create-rule",
+        "name": "Create Rule",
+        "description": "Create alerting rule"
+      },
+      {
+        "id": "get-alerts",
+        "name": "Get Alerts",
+        "description": "Retrieve active alerts"
+      },
+      {
+        "id": "query-range",
+        "name": "Query Range",
+        "description": "Query over time range"
+      },
+      {
+        "id": "get-series",
+        "name": "Get Series",
+        "description": "Get time series data"
+      },
+      {
+        "id": "get-labels",
+        "name": "Get Labels",
+        "description": "Retrieve metric labels"
+      }
+    ]
+  },
+  {
+    "id": "powerbi",
+    "name": "Power BI",
+    "type": "Business Intelligence",
+    "status": "available",
+    "description": "Microsoft business analytics and visualization platform",
+    "provider": "Microsoft",
+    "category": "Analytics",
+    "toolsCount": 11,
+    "icon": "FiTrendingUp",
+    "popular": true,
+    "tools": [
+      {
+        "id": "create-report",
+        "name": "Create Report",
+        "description": "Create new Power BI report"
+      },
+      {
+        "id": "refresh-dataset",
+        "name": "Refresh Dataset",
+        "description": "Refresh data in dataset"
+      },
+      {
+        "id": "publish-report",
+        "name": "Publish Report",
+        "description": "Publish report to workspace"
+      },
+      {
+        "id": "get-data",
+        "name": "Get Data",
+        "description": "Query dataset data"
+      },
+      {
+        "id": "create-dashboard",
+        "name": "Create Dashboard",
+        "description": "Create new dashboard"
+      },
+      {
+        "id": "add-tile",
+        "name": "Add Tile",
+        "description": "Add tile to dashboard"
+      },
+      {
+        "id": "share-report",
+        "name": "Share Report",
+        "description": "Share report with users"
+      },
+      {
+        "id": "export-report",
+        "name": "Export Report",
+        "description": "Export report to PDF/PowerPoint"
+      },
+      {
+        "id": "create-workspace",
+        "name": "Create Workspace",
+        "description": "Create new workspace"
+      },
+      {
+        "id": "schedule-refresh",
+        "name": "Schedule Refresh",
+        "description": "Schedule dataset refresh"
+      },
+      {
+        "id": "get-insights",
+        "name": "Get Insights",
+        "description": "Get AI-powered insights"
+      }
+    ]
+  },
+  {
+    "id": "aws-s3",
+    "name": "AWS S3",
+    "type": "Cloud Storage",
+    "status": "available",
+    "description": "Amazon Simple Storage Service for object storage",
+    "provider": "AWS",
+    "category": "Cloud",
+    "toolsCount": 10,
+    "icon": "FiDatabase",
+    "popular": true,
+    "tools": [
+      {
+        "id": "list-buckets",
+        "name": "List Buckets",
+        "description": "List all S3 buckets"
+      },
+      {
+        "id": "create-bucket",
+        "name": "Create Bucket",
+        "description": "Create new S3 bucket"
+      },
+      {
+        "id": "upload-object",
+        "name": "Upload Object",
+        "description": "Upload file to S3"
+      },
+      {
+        "id": "download-object",
+        "name": "Download Object",
+        "description": "Download file from S3"
+      },
+      {
+        "id": "list-objects",
+        "name": "List Objects",
+        "description": "List objects in bucket"
+      },
+      {
+        "id": "delete-object",
+        "name": "Delete Object",
+        "description": "Delete object from bucket"
+      },
+      {
+        "id": "get-object-metadata",
+        "name": "Get Object Metadata",
+        "description": "Retrieve object metadata"
+      },
+      {
+        "id": "copy-object",
+        "name": "Copy Object",
+        "description": "Copy object between buckets"
+      },
+      {
+        "id": "set-bucket-policy",
+        "name": "Set Bucket Policy",
+        "description": "Configure bucket policy"
+      },
+      {
+        "id": "generate-presigned-url",
+        "name": "Generate Presigned URL",
+        "description": "Create temporary access URL"
       }
     ]
   }

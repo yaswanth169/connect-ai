@@ -5,14 +5,13 @@ import { GlassCard, Input, Button, Badge, Loader, SkeletonCard } from '../compon
 import integrationsData from '../data/integrations.json';
 import { getIcon } from '../utils/iconMap';
 
-const categories = ['All', 'LLM', 'Cloud Platform', 'Open Source', 'Custom'];
+const categories = ['All', 'LLM', 'Open Source', 'Image Generation'];
 
 const categoryIcons = {
   'All': <FiZap className="w-4 h-4" />,
   'LLM': <FiCpu className="w-4 h-4" />,
-  'Cloud Platform': <FiCloud className="w-4 h-4" />,
   'Open Source': <FiCode className="w-4 h-4" />,
-  'Custom': <FiStar className="w-4 h-4" />,
+  'Image Generation': <FiStar className="w-4 h-4" />,
 };
 
 export const Integrations = () => {
@@ -69,17 +68,17 @@ export const Integrations = () => {
             </div>
           )}
           <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-6">
-            <FiZap className="w-4 h-4 text-white" />
-            <span className="text-sm font-semibold text-white">{models.length}+ AI Models Available</span>
+            <FiCloud className="w-4 h-4 text-white" />
+            <span className="text-sm font-semibold text-white">{models.length} AWS Bedrock Models Available</span>
           </div>
           
           <h1 className="text-6xl font-bold mb-6">
-            <span className="text-gradient">Choose Your AI Model</span>
+            <span className="text-gradient">Choose Your AWS Bedrock Model</span>
           </h1>
           
           <p className="text-xl text-primary-300 max-w-3xl mx-auto leading-relaxed">
-            Select from leading AI models and connect them to your tools via MCP protocol. 
-            Powerful integrations for intelligent automation.
+            Select from AWS Bedrock foundation models and connect them to your Barclays tools via MCP protocol. 
+            Enterprise-grade AI for intelligent automation.
           </p>
         </div>
 
@@ -265,7 +264,7 @@ export const Integrations = () => {
                   No models found
                 </h3>
                 <p className="text-primary-300 mb-8 max-w-md mx-auto">
-                  We couldn't find any AI models matching your search. Try adjusting your filters or search terms.
+                  We couldn't find any AWS Bedrock models matching your search. Try adjusting your filters or search terms.
                 </p>
                 <Button
                   variant="primary"
@@ -287,10 +286,10 @@ export const Integrations = () => {
             <GlassCard className="p-12">
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold mb-4">
-                  <span className="text-gradient">Most Popular</span>
+                  <span className="text-gradient">Connected Models</span>
                 </h2>
                 <p className="text-primary-300 text-lg">
-                  These AI models are trusted by leading enterprises
+                  AWS Bedrock models currently in use across Barclays
                 </p>
               </div>
 

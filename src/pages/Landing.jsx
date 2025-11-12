@@ -18,6 +18,8 @@ import {
   Rocket,
   Users,
   Globe,
+  Activity,
+  Cloud,
 } from 'lucide-react';
 import { Button, GlassCard, Badge } from '../components/ui';
 import ChatBot from '../components/ChatBot';
@@ -26,57 +28,57 @@ const features = [
   {
     icon: Zap,
     title: 'MCP Protocol Integration',
-    description: 'Connect business tools to AI models using the standardized Model Context Protocol for seamless automation.',
+    description: 'Connect Barclays enterprise tools to AWS Bedrock models using the standardized Model Context Protocol.',
   },
   {
     icon: Shield,
-    title: 'Enterprise Security',
-    description: 'Bank-grade encryption with SOC 2, GDPR, and HIPAA compliance. Your data security is our top priority.',
+    title: 'Bank-Grade Security',
+    description: 'Enterprise security with AWS compliance, encryption at rest and in transit. Meets Barclays security standards.',
   },
   {
-    icon: Layers,
-    title: 'Universal Compatibility',
-    description: 'Works with GPT-4, Claude, Gemini, Llama, and all major AI models. One platform, endless possibilities.',
+    icon: Cloud,
+    title: 'AWS Bedrock Integration',
+    description: 'Seamless integration with AWS Bedrock models including Claude, Titan, Llama, and more. Runs in your AWS environment.',
   },
   {
     icon: BarChart3,
     title: 'Real-time Analytics',
-    description: 'Monitor MCP connections and performance with comprehensive dashboards and detailed analytics.',
+    description: 'Monitor MCP connections and AWS Bedrock model performance with comprehensive dashboards and CloudWatch integration.',
   },
   {
     icon: Clock,
     title: 'Instant Setup',
-    description: 'Connect tools to AI models in minutes with our intuitive interface. No coding required.',
+    description: 'Connect enterprise tools to AWS Bedrock models in minutes with our intuitive interface. No coding required.',
   },
   {
     icon: Code2,
     title: 'Developer Friendly',
-    description: 'Comprehensive API documentation, SDKs, and code examples to customize every integration.',
+    description: 'Comprehensive API documentation, SDKs, and code examples to customize every integration with your AWS setup.',
   },
 ];
 
 const tools = [
   { name: 'Jira', icon: Layers },
-  { name: 'Slack', icon: Zap },
-  { name: 'GitHub', icon: Code2 },
   { name: 'Confluence', icon: Database },
-  { name: 'Notion', icon: Workflow },
-  { name: 'Trello', icon: BarChart3 },
-  { name: 'Asana', icon: CheckCircle2 },
-  { name: 'Linear', icon: TrendingUp },
+  { name: 'GitLab', icon: Code2 },
+  { name: 'AWS CloudWatch', icon: Cloud },
+  { name: 'Grafana', icon: Activity },
+  { name: 'Prometheus', icon: TrendingUp },
+  { name: 'Power BI', icon: BarChart3 },
+  { name: 'AWS S3', icon: Database },
 ];
 
 const aiModels = [
-  { name: 'GPT-4', provider: 'OpenAI' },
-  { name: 'Claude 3', provider: 'Anthropic' },
-  { name: 'Gemini Pro', provider: 'Google' },
-  { name: 'Llama 3', provider: 'Meta' },
-  { name: 'Mistral', provider: 'Mistral AI' },
-  { name: 'Grok', provider: 'xAI' },
+  { name: 'Claude 3.5 Sonnet', provider: 'AWS Bedrock' },
+  { name: 'Claude 3 Opus', provider: 'AWS Bedrock' },
+  { name: 'Claude 3 Sonnet', provider: 'AWS Bedrock' },
+  { name: 'Amazon Titan', provider: 'AWS Bedrock' },
+  { name: 'Llama 3', provider: 'AWS Bedrock' },
+  { name: 'Mistral Large', provider: 'AWS Bedrock' },
 ];
 
 const stats = [
-  { value: '270+', label: 'Integrations', icon: Database },
+  { value: '8', label: 'Enterprise Tools', icon: Database },
   { value: '99.9%', label: 'Uptime SLA', icon: TrendingUp },
   { value: '10M+', label: 'MCP Requests/Day', icon: Zap },
   { value: '<50ms', label: 'Avg Latency', icon: Clock },
@@ -85,22 +87,22 @@ const stats = [
 const benefits = [
   {
     title: 'Automate Workflows',
-    description: 'Let AI handle repetitive tasks across your tools automatically.',
+    description: 'Let AWS Bedrock AI handle repetitive tasks across your tools automatically.',
     icon: Workflow,
   },
   {
     title: 'Real-time Insights',
-    description: 'Get instant answers from your business data using AI.',
+    description: 'Get instant answers from your business data using AWS Bedrock models.',
     icon: BarChart3,
   },
   {
     title: 'Scale Infinitely',
-    description: 'Handle millions of MCP requests with enterprise infrastructure.',
+    description: 'Handle millions of MCP requests with AWS enterprise infrastructure.',
     icon: TrendingUp,
   },
   {
     title: 'Secure by Default',
-    description: 'All connections are encrypted and compliant with industry standards.',
+    description: 'All connections run in AWS with bank-grade security and Barclays compliance.',
     icon: Shield,
   },
 ];
@@ -113,29 +115,29 @@ export const Landing = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32">
           <div className="text-center max-w-5xl mx-auto animate-fade-in">
             <Badge variant="default" className="mb-8 inline-flex shadow-lg border-white/30">
-              <Zap className="w-4 h-4 mr-2" strokeWidth={2.5} />
-              Powered by Model Context Protocol (MCP)
+              <Cloud className="w-4 h-4 mr-2" strokeWidth={2.5} />
+              Powered by AWS Bedrock & Model Context Protocol
             </Badge>
             
             <h1 className="text-6xl sm:text-7xl font-bold mb-8 leading-tight">
-              <span className="block mb-2 text-white">Connect Your Tools</span>
-              <span className="text-gradient">to Any AI Model</span>
+              <span className="block mb-2 text-white">Connect Barclays Tools</span>
+              <span className="text-gradient">to AWS Bedrock AI</span>
             </h1>
             
             <p className="text-2xl text-primary-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Enterprise-grade MCP platform connecting business tools to AI models. 
-              Automate workflows with GPT-4, Claude, Gemini, and more.
+              Enterprise MCP platform for Barclays. Connect enterprise tools to AWS Bedrock models. 
+              Automate workflows with Claude, Titan, Llama, and more - securely within AWS.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
               <Link to="/dashboard">
                 <Button size="lg" icon={ArrowRight} iconPosition="right" className="text-lg px-10 py-5 shadow-2xl">
-                  Start Free Trial
+                  Get Started
                 </Button>
               </Link>
               <Link to="/integrations">
                 <Button size="lg" variant="secondary" className="text-lg px-10 py-5">
-                  View Integrations
+                  View AWS Bedrock Models
                 </Button>
               </Link>
             </div>
@@ -167,14 +169,14 @@ export const Landing = () => {
           <div className="text-center mb-16">
             <Badge variant="info" className="mb-6 shadow-lg">
               <Code2 className="w-4 h-4 mr-2" />
-              Understanding MCP
+              Understanding MCP on AWS Bedrock
             </Badge>
             <h2 className="text-5xl font-bold mb-6">
               <span className="text-gradient">What is Model Context Protocol?</span>
             </h2>
             <p className="text-xl text-primary-300 max-w-3xl mx-auto">
-              MCP is the standardized way to connect AI models with external tools and data sources,
-              enabling seamless integration between LLMs and your business applications.
+              MCP is the standardized way to connect AWS Bedrock AI models with enterprise tools,
+              enabling seamless integration between foundation models and your Barclays applications.
             </p>
           </div>
 
@@ -186,8 +188,8 @@ export const Landing = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Standardized Connection</h3>
                 <p className="text-primary-300">
-                  MCP provides a universal protocol for AI models to communicate with external tools, 
-                  ensuring compatibility and consistency.
+                  MCP provides a universal protocol for AWS Bedrock models to communicate with enterprise tools, 
+                  ensuring compatibility and consistency across your Barclays environment.
                 </p>
               </div>
             </GlassCard>
@@ -195,12 +197,12 @@ export const Landing = () => {
             <GlassCard hover className="text-center">
               <div className="py-8">
                 <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white flex items-center justify-center">
-                  <Zap className="w-8 h-8 text-black" strokeWidth={2.5} />
+                  <Cloud className="w-8 h-8 text-black" strokeWidth={2.5} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Real-time Access</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">AWS Bedrock Integration</h3>
                 <p className="text-primary-300">
-                  Give your AI models instant access to live data from tools like Jira, Slack,
-                  GitHub, and more without manual intervention.
+                  Direct integration with AWS Bedrock foundation models including Claude 3.5, Amazon Titan,
+                  and more - all running securely within your AWS infrastructure.
                 </p>
               </div>
             </GlassCard>
@@ -210,10 +212,10 @@ export const Landing = () => {
                 <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white flex items-center justify-center">
                   <Rocket className="w-8 h-8 text-black" strokeWidth={2.5} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Endless Automation</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Enterprise Automation</h3>
                 <p className="text-primary-300">
-                  Create powerful workflows where AI models can read, write, and automate tasks
-                  across all your business tools.
+                  Create powerful workflows where AWS Bedrock models can read, write, and automate tasks
+                  across Jira, Confluence, GitLab, and all your Barclays tools.
                 </p>
               </div>
             </GlassCard>
@@ -229,7 +231,7 @@ export const Landing = () => {
               <span className="text-gradient">How to Connect in 3 Simple Steps</span>
             </h2>
             <p className="text-xl text-primary-300 max-w-3xl mx-auto">
-              Getting started with MCP integration is easier than you think
+              Getting started with AWS Bedrock MCP integration is easier than you think
             </p>
           </div>
 
@@ -241,7 +243,7 @@ export const Landing = () => {
               <div className="pt-6">
                 <h3 className="text-2xl font-bold text-white mb-4">Choose Your Tools</h3>
                 <p className="text-primary-300 mb-4">
-                  Browse our library of 270+ integrations including Jira, Slack, GitHub, Confluence, 
+                  Browse enterprise tools including Jira, Confluence, GitLab, AWS CloudWatch, Grafana, 
                   and select the tools you want to connect.
                 </p>
                 <Link to="/sources">
@@ -257,10 +259,10 @@ export const Landing = () => {
                 2
               </div>
               <div className="pt-6">
-                <h3 className="text-2xl font-bold text-white mb-4">Select AI Model</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Select AWS Bedrock Model</h3>
                 <p className="text-primary-300 mb-4">
-                  Choose from GPT-4, Claude 3, Gemini Pro, Llama 3, or any other major AI model 
-                  to power your integrations.
+                  Choose from Claude 3.5 Sonnet, Claude 3 Opus, Amazon Titan, Llama 3, or any other 
+                  AWS Bedrock foundation model to power your integrations.
                 </p>
                 <Link to="/integrations">
                   <Button variant="ghost" icon={ArrowRight} iconPosition="right">
@@ -277,8 +279,8 @@ export const Landing = () => {
               <div className="pt-6">
                 <h3 className="text-2xl font-bold text-white mb-4">Configure & Deploy</h3>
                 <p className="text-primary-300 mb-4">
-                  Follow our step-by-step documentation, add your MCP endpoint URL, 
-                  and start automating workflows instantly.
+                  Follow our step-by-step documentation, add your MCP endpoint URL within AWS, 
+                  and start automating workflows instantly with bank-grade security.
                 </p>
                 <Button variant="ghost" icon={ArrowRight} iconPosition="right">
                   Read Docs
@@ -289,15 +291,15 @@ export const Landing = () => {
         </div>
       </section>
 
-      {/* Rotating Tools Showcase */}
+      {/* Enterprise Tools Showcase */}
       <section className="py-24 bg-gradient-to-b from-black to-[#111111]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6">
-              <span className="text-gradient">Popular Business Tools</span>
+              <span className="text-gradient">Barclays Enterprise Tools</span>
             </h2>
             <p className="text-xl text-primary-300 max-w-3xl mx-auto">
-              Connect your favorite business tools to AI models via MCP
+              Connect your critical enterprise tools to AWS Bedrock models via MCP
             </p>
           </div>
 
@@ -325,9 +327,9 @@ export const Landing = () => {
           </div>
 
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-white mb-4">AI Models</h3>
+            <h3 className="text-4xl font-bold text-white mb-4">AWS Bedrock Models</h3>
             <p className="text-lg text-primary-300 mb-8">
-              Compatible with all major AI models
+              Foundation models running securely in your AWS environment
             </p>
           </div>
 
@@ -357,7 +359,7 @@ export const Landing = () => {
               <span className="text-gradient">Enterprise Features</span>
             </h2>
             <p className="text-xl text-primary-300 max-w-3xl mx-auto">
-              Everything you need to build powerful AI-driven automation
+              Everything you need to build powerful AI-driven automation on AWS Bedrock
             </p>
           </div>
 
@@ -394,10 +396,10 @@ export const Landing = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6">
-              <span className="text-gradient">Why Choose ConnectAI?</span>
+              <span className="text-gradient">Why Choose BPAZ MCP?</span>
             </h2>
             <p className="text-xl text-primary-300 max-w-3xl mx-auto">
-              Built for enterprises, trusted by industry leaders
+              Built for Barclays, powered by AWS Bedrock, secured by design
             </p>
           </div>
 
@@ -426,20 +428,20 @@ export const Landing = () => {
           <GlassCard className="relative overflow-hidden border-white/20">
             <div className="py-24 text-center relative z-10">
               <h2 className="text-5xl sm:text-6xl font-bold text-white mb-6">
-                Ready to Connect Your Tools to AI?
+                Ready to Connect Tools to AWS Bedrock?
               </h2>
               <p className="text-2xl text-primary-300 mb-12 max-w-3xl mx-auto">
-                Join thousands of companies already automating with MCP
+                Start automating Barclays workflows with AWS Bedrock foundation models today
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/dashboard">
                   <Button size="lg" icon={Rocket} iconPosition="right" className="text-lg px-12 py-6 shadow-2xl">
-                    Start Free Trial
+                    Get Started
                   </Button>
                 </Link>
                 <Link to="/integrations">
                   <Button size="lg" variant="outline" className="text-lg px-12 py-6">
-                    View All Integrations
+                    View All Models
                   </Button>
                 </Link>
               </div>
@@ -456,10 +458,10 @@ export const Landing = () => {
               <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
                 <Workflow className="w-6 h-6 text-black" strokeWidth={2.5} />
               </div>
-              <span className="text-xl font-bold text-white">ConnectAI</span>
+              <span className="text-xl font-bold text-white">BPAZ MCP</span>
             </div>
             <p className="text-sm text-primary-400">
-              © 2025 ConnectAI. Built for the AI-first future.
+              © 2025 BPAZ MCP. Enterprise Model Context Protocol Platform for Barclays.
             </p>
           </div>
         </div>

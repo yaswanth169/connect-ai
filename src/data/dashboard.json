@@ -8,7 +8,7 @@
       "icon": "Zap"
     },
     {
-      "title": "AI Models Connected",
+      "title": "AWS Bedrock Models",
       "value": "8",
       "change": "+33.3%",
       "trend": "up",
@@ -16,8 +16,8 @@
     },
     {
       "title": "Tools Integrated",
-      "value": "12",
-      "change": "+25.0%",
+      "value": "8",
+      "change": "+14.3%",
       "trend": "up",
       "icon": "Database"
     },
@@ -31,52 +31,70 @@
   ],
   "mcpPerformance": [
     {
-      "name": "GPT-4",
-      "requests": 1247,
-      "success": 98.9,
+      "name": "Claude 3.5 Sonnet",
+      "requests": 1847,
+      "success": 99.2,
       "status": "success"
     },
     {
-      "name": "Claude 3",
-      "requests": 892,
-      "success": 97.2,
+      "name": "Claude 3 Opus",
+      "requests": 1392,
+      "success": 98.7,
       "status": "success"
     },
     {
-      "name": "Gemini Pro",
+      "name": "Claude 3 Sonnet",
+      "requests": 1156,
+      "success": 98.1,
+      "status": "success"
+    },
+    {
+      "name": "Amazon Titan Text",
       "requests": 634,
-      "success": 94.5,
+      "success": 97.5,
       "status": "success"
     },
     {
-      "name": "Llama 3",
+      "name": "Llama 3 70B",
       "requests": 423,
-      "success": 91.8,
-      "status": "warning"
+      "success": 96.8,
+      "status": "success"
     }
   ],
   "activeTools": [
     {
       "name": "Jira",
-      "model": "GPT-4",
-      "requests": 342,
-      "status": "success"
-    },
-    {
-      "name": "Slack",
-      "model": "Claude 3",
-      "requests": 256,
-      "status": "success"
-    },
-    {
-      "name": "GitHub",
-      "model": "GPT-4",
-      "requests": 189,
+      "model": "Claude 3.5 Sonnet",
+      "requests": 542,
       "status": "success"
     },
     {
       "name": "Confluence",
-      "model": "Gemini Pro",
+      "model": "Claude 3 Opus",
+      "requests": 387,
+      "status": "success"
+    },
+    {
+      "name": "GitLab",
+      "model": "Claude 3 Sonnet",
+      "requests": 298,
+      "status": "success"
+    },
+    {
+      "name": "AWS CloudWatch",
+      "model": "Amazon Titan Text",
+      "requests": 245,
+      "status": "success"
+    },
+    {
+      "name": "Grafana",
+      "model": "Claude 3.5 Sonnet",
+      "requests": 189,
+      "status": "success"
+    },
+    {
+      "name": "Power BI",
+      "model": "Claude 3 Opus",
       "requests": 147,
       "status": "success"
     }
@@ -84,29 +102,33 @@
   "recentActivity": [
     {
       "time": "2 minutes ago",
-      "action": "MCP connection established: Jira → GPT-4",
+      "action": "MCP connection established: Jira → Claude 3.5 Sonnet",
       "type": "connection"
     },
     {
       "time": "15 minutes ago",
-      "action": "New workflow created: Auto-assign GitHub issues",
+      "action": "New workflow created: Auto-triage GitLab issues with AI",
       "type": "workflow"
     },
     {
       "time": "45 minutes ago",
-      "action": "Claude 3 Opus model connected successfully",
+      "action": "Claude 3 Opus model connected to AWS Bedrock successfully",
       "type": "integration"
     },
     {
       "time": "1 hour ago",
-      "action": "Tool request submitted: Salesforce integration",
+      "action": "Tool request submitted: ServiceNow integration",
       "type": "request"
     },
     {
       "time": "2 hours ago",
-      "action": "MCP endpoint updated for Slack integration",
+      "action": "MCP endpoint updated for Confluence integration",
       "type": "config"
+    },
+    {
+      "time": "3 hours ago",
+      "action": "AWS CloudWatch monitoring activated for all models",
+      "type": "monitoring"
     }
   ]
 }
-

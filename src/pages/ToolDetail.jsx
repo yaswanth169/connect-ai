@@ -146,7 +146,7 @@ export const ToolDetail = () => {
               Ready to Connect {source.name}?
             </h2>
             <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Connect {source.name} to AI models and start automating your workflows with intelligent agents.
+              Connect {source.name} to AWS Bedrock models and start automating your Barclays workflows with intelligent AI agents.
             </p>
             <Button
               size="lg"

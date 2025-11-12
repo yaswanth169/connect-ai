@@ -1,6 +1,6 @@
-# ConnectAI - Bridge Your Data to AI
+# BPAZ MCP - Enterprise Model Context Protocol Platform
 
-A professional React application for connecting business data sources to AI applications. Built with React, TypeScript, Tailwind CSS, and modern best practices.
+A professional React application for connecting Barclays enterprise tools to AWS Bedrock foundation models. Built with React, Vite, Tailwind CSS, and modern best practices.
 
 ## Features
 
@@ -8,7 +8,7 @@ A professional React application for connecting business data sources to AI appl
 - 🔐 **SSO Authentication** - Single Sign-On login integration in sidebar
 - 📱 **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile
 - 🧩 **Reusable Components** - Clean component architecture with TypeScript
-- 🎯 **270+ Data Sources** - Pre-built connectors for business applications
+- 🎯 **Enterprise Tools** - Jira, Confluence, GitLab, AWS CloudWatch, Grafana, Prometheus, Power BI, AWS S3
 - ⚡ **Fast Performance** - Built with Vite for lightning-fast development
 - 🎨 **Tailwind CSS** - Utility-first CSS framework for rapid UI development
 - 🔍 **React Router** - Client-side routing with protected routes
@@ -25,7 +25,7 @@ A professional React application for connecting business data sources to AI appl
 ## Project Structure
 
 ```
-connect-ai/
+bpaz-mcp/
 ├── src/
 │   ├── components/
 │   │   ├── ui/              # Reusable UI components
@@ -73,7 +73,7 @@ connect-ai/
 
 1. Navigate to the project directory:
 ```bash
-cd connect-ai
+cd bpaz-mcp
 ```
 
 2. Install dependencies:
@@ -119,20 +119,20 @@ npm run preview
 - Recent activity timeline
 - Trend indicators
 
-### Data Sources
-- **List View**: Browse all 10+ data sources with summary stats
+### Enterprise Tools
+- **List View**: Browse all 8 enterprise tools with summary stats
 - **Detail View**: Click any source to view comprehensive details
 - Connection information (host, port, database)
 - Performance metrics (uptime, rows, tables, size)
 - Connect/Disconnect functionality
 - Visual status indicators
 
-### Integrations
-- 270+ pre-built connectors
-- Category-based filtering
+### AWS Bedrock Models
+- 22 foundation models from AWS Bedrock
+- Category-based filtering (LLM, Open Source, Image Generation)
 - Search functionality
 - Connection status badges
-- AI platform integrations (ChatGPT, Claude, MCP, etc.)
+- Models: Claude 3.5 Sonnet, Claude 3 Opus/Sonnet/Haiku, Amazon Titan, Llama 3, Mistral, Cohere, and more
 
 ### Sidebar Navigation
 - Organized navigation sections
@@ -205,5 +205,5 @@ MIT License
 
 ## Author
 
-Built with ❤️ for modern AI-powered applications
+Built for Barclays enterprise environment with AWS Bedrock integration
 

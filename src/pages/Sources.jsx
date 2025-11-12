@@ -49,10 +49,10 @@ export const Sources = () => {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div>
               <h1 className="text-5xl font-bold mb-3">
-                <span className="text-gradient">Software Tools</span>
+                <span className="text-gradient">Enterprise Tools</span>
               </h1>
               <p className="text-xl text-primary-300">
-                Connect your business tools to AI-powered automation
+                Connect Barclays enterprise tools to AWS Bedrock AI models
               </p>
             </div>
             <Button 
